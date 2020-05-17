@@ -2,7 +2,7 @@
 docker run -p 8888:8888 -d --name jupyter jupyter/scipy-notebook:83ed2c63671f
 
 # copy the script into the container; note: the resulting file is owned by root and it not executable
-docker cp prepareContainer.sh jupyter:/tmp/prepareContainerRoot.sh
+docker cp ./prepareContainer.sh jupyter:/tmp/prepareContainerRoot.sh
 
 # docker cp out.ipynb jupyter:/work
 # docker cp out.ipynb jupyter:/home/jovyan/work
