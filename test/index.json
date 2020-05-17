@@ -11,7 +11,8 @@
       }
     ],
     "intro": {
-      "text": "intro.md"
+      "text": "intro.md",
+      "code": "set-env.sh"
     },
     "finish": {
       "text": "finish.md"
@@ -22,5 +23,13 @@
   },
   "backend": {
     "imageid": "ubuntu1804"
+  },
+  "assets": {
+    "client": [
+      {
+        "file": "prepareContainer.sh",
+        "target": "~/"
+      }
+    ]
   }
 }
