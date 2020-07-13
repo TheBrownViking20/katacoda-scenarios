@@ -6,3 +6,5 @@ docker restart jupyter
 docker cp ./ jupyter:/home/jovyan/work
 
 docker exec -it jupyter bash -c 'jupyter notebook list' | cut -d'=' -f 2 | cut -d' ' -f 1
+
+echo "Setup done."

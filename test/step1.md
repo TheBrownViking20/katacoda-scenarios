@@ -1,5 +1,1 @@
-Just testing
-
-`docker restart jupyter`{{execute}}
-
-`docker logs jupyter`{{execute}}
+This is the notebook setup phase.
