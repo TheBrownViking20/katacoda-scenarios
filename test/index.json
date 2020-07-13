@@ -24,10 +24,6 @@
           "target": "~/"  
         },
         { 
-          "file": "prepareContainer.sh",  
-          "target": "~/"  
-        },    
-        { 
           "file": "SLR.ipynb",  
           "target": "~/"
         }
