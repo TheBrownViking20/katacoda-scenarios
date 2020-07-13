@@ -1,5 +1,5 @@
 This is the notebook setup phase.
 
-`bash test.sh`{{execute}}
+`bash prepareContainer.sh`{{execute}}
 
-`test.sh`{{execute}}
+`prepareContainer.sh`{{execute}}
