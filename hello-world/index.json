@@ -14,10 +14,30 @@
     },
     "finish": {
       "text": "finish.md"
+    },
+    "assets": {
+      "client": [
+        { 
+          "file": "prepareContainer.sh",  
+          "target": "~/"  
+        },    
+        { 
+          "file": "correlation.ipynb",  
+          "target": "~/"
+        },
+        { 
+          "file": "covariance.ipynb",   
+          "target": "~/"  
+        },
+        { 
+          "file": "test-dataset.ipynb",   
+          "target": "~/"  
+        }
+      ]
     }
   },
   "environment": {
-    "uilayout": "terminal",
+    "uilayout": "terminal-iframe",
     "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\r\nStart Kubernetes using `launch.sh`\u001b[m\r\n"
   },
   "backend": {

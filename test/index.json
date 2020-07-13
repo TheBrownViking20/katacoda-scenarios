@@ -16,6 +16,18 @@
     },
     "finish": {
       "text": "finish.md"
+    },
+    "assets": {
+      "client": [
+        { 
+          "file": "hour.csv",  
+          "target": "~/"  
+        },    
+        { 
+          "file": "SLR.ipynb",  
+          "target": "~/"
+        }
+      ]
     }
   },
   "environment": {
