@@ -1,6 +1,6 @@
 {
-  "title": "Linear Regression from scratch using NumPy",
-  "description": "In this scenario, you will learn how to create linear regression algorithms from scratch using Numpy, a library for numeric computing in Python.",
+  "title": "Multiple Linear Regression using Python",
+  "description": "In this scenario, you will learn how to perform multiple linear regression effectively using cross-validation and feature selection.",
   "difficulty": "Beginner",
   "time": "15 minutes",
   "details": {
@@ -32,7 +32,7 @@
           "target": "~/"  
         },
         { 
-          "file": "SLR-scratch.ipynb",  
+          "file": "MLR.ipynb",  
           "target": "~/"
         }
       ]
