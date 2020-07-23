@@ -1,3 +1,5 @@
-### The end
+Well done! You have successfully completed the tutorial.
 
-Ho gya samapt
+### Learning outcomes
+* Loading and analyzing data for regression
+* Training and evaluating a basic linear regression model

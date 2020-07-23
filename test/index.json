@@ -1,13 +1,17 @@
 {
-  "title": "test",
+  "title": "Linear Regression using Python",
   "description": "test",
   "difficulty": "Beginner",
   "time": "10 minutes",
   "details": {
     "steps": [
       {
-        "title": "Step 1",
+        "title": "Steps/Step 1",
         "text": "step1.md"
+      },
+      {
+        "title": "Steps/Step 2",
+        "text": "step2.md"
       }
     ],
     "intro": {
