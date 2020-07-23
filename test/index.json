@@ -1,6 +1,6 @@
 {
-  "title": "Polynomial Regression using Python",
-  "description": "In this scenario, you will learn how to perform polynomial regression effectively.",
+  "title": "Regularization in regression using Python",
+  "description": "In this scenario, you will learn how to use regularization in linear regression models effectively.",
   "difficulty": "Beginner",
   "time": "15 minutes",
   "details": {
@@ -32,7 +32,11 @@
           "target": "~/"  
         },
         { 
-          "file": "PR.ipynb",  
+          "file": "RegL1.ipynb",  
+          "target": "~/"
+        },
+        { 
+          "file": "RegL2.ipynb",  
           "target": "~/"
         }
       ]
