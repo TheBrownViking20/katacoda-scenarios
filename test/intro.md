@@ -15,3 +15,4 @@ Other uses of regression are:
 * Future sales prediction and much more
 
 ### What is regularization?
+Regularization is a kind of regression that shrinks the coefficient estimates towards zero. This techniques discourages formation of a complex model, so as to avoid risk of overfitting.
