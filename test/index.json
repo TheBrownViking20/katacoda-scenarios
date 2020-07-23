@@ -28,7 +28,7 @@
     "assets": {
       "client": [
         { 
-          "file": "hour.csv",  
+          "file": "data.csv",  
           "target": "~/"  
         },
         { 
