@@ -1,4 +1,4 @@
-# ->Linear Regression with Python<-
+# <p align="center">Linear Regression with Python</p>
 
 ## Linear Regression using Scikit-Learn
 
