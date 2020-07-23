@@ -1,6 +1,6 @@
 # <p align="center">Linear Regression with Python</p>
 
-## Linear Regression using Scikit-Learn
+## Linear Regression from scratch using NumPy
 
 In this scenario, you will learn how to use linear regression to solve various business problems. We will be using various python libraries for this tutorial. We will use pandas for data loading and data manipulation, matplotlib for data visualization and Scikit-learn for data preprocessing and modeling.
 
@@ -13,4 +13,3 @@ Other uses of regression are:
 * Predictive analysis from survey data
 * Market research studies
 * Future sales prediction and much more
-

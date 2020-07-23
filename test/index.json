@@ -1,6 +1,6 @@
 {
-  "title": "Linear Regression with Scikit-learn",
-  "description": "In this scenario, you will learn how to use linear regression to solve various business problems.",
+  "title": "Linear Regression from scratch using NumPy",
+  "description": "In this scenario, you will learn how to create linear regression algorithms from scratch using Numpy, a library for numeric computing in Python.",
   "difficulty": "Beginner",
   "time": "15 minutes",
   "details": {
@@ -32,7 +32,7 @@
           "target": "~/"  
         },
         { 
-          "file": "SLR.ipynb",  
+          "file": "SLR-scratch.ipynb",  
           "target": "~/"
         }
       ]
