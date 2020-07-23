@@ -1,6 +1,6 @@
 {
-  "title": "Multiple Linear Regression using Python",
-  "description": "In this scenario, you will learn how to perform multiple linear regression effectively using cross-validation and feature selection.",
+  "title": "Polynomial Regression using Python",
+  "description": "In this scenario, you will learn how to perform polynomial regression effectively.",
   "difficulty": "Beginner",
   "time": "15 minutes",
   "details": {
@@ -32,7 +32,7 @@
           "target": "~/"  
         },
         { 
-          "file": "MLR.ipynb",  
+          "file": "PR.ipynb",  
           "target": "~/"
         }
       ]
