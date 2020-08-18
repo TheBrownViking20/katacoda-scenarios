@@ -1,5 +1,0 @@
-A Jupyter notebook consists of a series of cells. Here, cells have either been used for executing Python code or for providing information regarding the tutorial. Markdown cells are used for defining new terms, explaining processes and in general, conveying any important information about the tutorial. Markdown cells precede code cells and describe the intention and working of the following code.
-
-Code cells are numbered and contain segments of code. The number beside a cell indicates its position in the sequence of code execution. An active code cell can be executed by pressing **Shift-Enter**. A code cell can be executed at any time. This is useful especially in fields like Data Science where you can easily test parts of code without running the whole code again and again. For example, changing the parameters of a machine learning model for experimentation, trying to run a part of the code with a different data source, etc.
-
-The students are encouraged to properly explore and take advantage of the jupyter notebook by experimenting with the code. Follow the tutorial in the Jupyter notebook sequentially.
