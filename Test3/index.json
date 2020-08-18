@@ -40,7 +40,7 @@
   },
   "environment": {
     "hidefinish": true,
-    "uilayout": "vscode-terminal-iframe",
+    "uilayout": "vscode-terminal-split",
     "showdashboard": true,
     "dashboards": [
       {
@@ -48,7 +48,8 @@
         "port": 8888
       }
     ],
-},
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\r\n"
+  },
   "backend": {
     "imageid": "ubuntu:1804"
   }
