@@ -40,7 +40,7 @@
   },
   "environment": {
     "hidefinish": true,
-    "uilayout": "vscode-terminal-split",
+    "uilayout": "terminal-iframe",
     "showdashboard": true,
     "dashboards": [
       {
