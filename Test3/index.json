@@ -1,6 +1,6 @@
 {
-  "title": "Test2",
-  "description": "Test2",
+  "title": "Test",
+  "description": "Test",
   "difficulty": "Beginner",
   "time": "10 minutes",
   "details": {
@@ -25,9 +25,7 @@
       "text": "finish.md"
     }
   },
-  "environment": {
-    "uilayout": "editor-terminal"
-  },
+  "environment": {},
   "backend": {
     "imageid": "vscode"
   }
