@@ -1,5 +1,5 @@
-docker run -p 8888:8888 -d --name jupyter jupyter/scipy-notebook:acb539921413
+apt install bsdtar -y
 
-docker restart jupyter
+curl -L https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ms-python/vsextensions/python/2020.5.86806/vspackage | bsdtar -xvf - extension
 
-docker cp ./ jupyter:/home/jovyan
+mv extension /opt/.katacodacode/extensions/mspython
