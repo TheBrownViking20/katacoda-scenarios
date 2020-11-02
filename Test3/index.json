@@ -40,6 +40,7 @@
   "environment": {
     "uieditorpath": "/root/example",
     "showide": true,
+    "showvisualise": true,
     "idePort": 23000,
     "uilayout": "terminal"
   },
