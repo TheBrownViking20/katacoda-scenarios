@@ -31,6 +31,10 @@
           "target": "~/"  
         },
         { 
+          "file": "sc.png",  
+          "target": "~/"  
+        },
+        { 
           "file": "SLR-scratch.ipynb",  
           "target": "~/"
         }
@@ -38,11 +42,7 @@
     }
   },
   "environment": {
-    "uieditorpath": "/root/example",
-    "showide": true,
-    "showvisualise": true,
-    "idePort": 23000,
-    "uilayout": "terminal"
+    "uilayout": "vscode-terminal-split"
   },
   "backend": {
     "imageid": "ubuntu:1804"
