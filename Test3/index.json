@@ -114,7 +114,7 @@
         { 
           "file": "dp2.jpg",  
           "target": "~/images/"  
-        },
+        }
       ]
     }
   },
