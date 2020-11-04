@@ -38,6 +38,10 @@
         { 
           "file": "vectormagnitude.jpg",  
           "target": "~/images/"  
+        },
+        { 
+          "file": "3dvectors.jpg",  
+          "target": "~/images/"  
         }
       ]
     }
