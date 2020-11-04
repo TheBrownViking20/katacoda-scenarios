@@ -18,6 +18,7 @@ print("v12 = v1 + v2 =",v12)
 </pre>
 
 Run `vector.py` using the following command:
+
 `python3 vector.py`{{execute}}
 
 Below is the quiver plot for parallelogram law of vector addition.

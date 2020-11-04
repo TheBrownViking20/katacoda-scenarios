@@ -22,6 +22,7 @@ print("The dot product of u and v =",np.dot(u,v))
 </pre>
 
 Run `vector.py` using the following command:
+
 `python3 vector.py`{{execute}}
 
 ## Cross Product
@@ -38,6 +39,7 @@ print(cross_product)
 </pre>
 
 Run `vector.py` using the following command:
+
 `python3 vector.py`{{execute}}
 
 Let's plot out the quiver plot of these vectors and their cross product. Copy the following code to the editor:
@@ -78,5 +80,9 @@ plt.title("Plotting cross product")
 plt.savefig("cross_product.png", dpi=300)
 plt.show()
 </pre>
+
+Run `vector.py` using the following command:
+
+`python3 vector.py`{{execute}}
 
 Click and view the newly formed `cross_product.png` file from the VScode sidebar. Clearly, `u x v` lies in a plane perpendicular to the plane in which vectors `u` and `v` lie.

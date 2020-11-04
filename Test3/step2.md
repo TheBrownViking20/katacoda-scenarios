@@ -43,6 +43,7 @@ plt.show()
 </pre>
 
 Run `vector.py` using the following command:
+
 `python3 vector.py`{{execute}}
 
 Click and view the newly formed `2Dvectors.png` file from the VScode sidebar.
@@ -81,6 +82,7 @@ plt.show()
 </pre>
 
 Run `vector.py` using the following command:
+
 `python3 vector.py`{{execute}}
 
 Click and view the newly formed `3Dvectors.png` file from the VScode sidebar.

@@ -20,6 +20,7 @@ print(v1)
 </pre>
 
 Read the comments in the above code for better understanding. You can run `vector.py` using the following command:
+
 `python3 vector.py`{{execute}}
 
 Copy the code below to the editor to represent the above vector in an alternate way:
@@ -32,4 +33,5 @@ print(v1)
 </pre>
 
 Run `vector.py` using the following command:
+
 `python3 vector.py`{{execute}}

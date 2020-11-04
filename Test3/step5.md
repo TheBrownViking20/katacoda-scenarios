@@ -31,6 +31,7 @@ print("dv = d * v =",dv)
 </pre>
 
 Run `vector.py` using the following command:
+
 `python3 vector.py`{{execute}}
 
 #### Some rules of thumb for Scalar Multiplication

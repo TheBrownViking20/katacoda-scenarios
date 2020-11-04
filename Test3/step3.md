@@ -16,6 +16,7 @@ print("Magnitude:",magnitude)
 </pre>
 
 Run `vector.py` using the following command:
+
 `python3 vector.py`{{execute}}
 
 ## Unit vector
@@ -36,4 +37,5 @@ print("Unit vector:",v1_unit)
 </pre>
 
 Run `vector.py` using the following command:
+
 `python3 vector.py`{{execute}}

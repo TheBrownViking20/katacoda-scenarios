@@ -24,6 +24,7 @@ print("c = a - b =",c)
 </pre>
 
 Run `vector.py` using the following command:
+
 `python3 vector.py`{{execute}}
 
 Below is the quiver plot for parallelogram law of vector subtraction.
