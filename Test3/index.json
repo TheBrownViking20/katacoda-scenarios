@@ -90,7 +90,31 @@
         { 
           "file": "sm5.jpg",  
           "target": "~/images/"  
-        }
+        },
+        { 
+          "file": "vs1.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "vs2.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "vs3.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "pmsubtraction.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "dp1.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "dp2.jpg",  
+          "target": "~/images/"  
+        },
       ]
     }
   },

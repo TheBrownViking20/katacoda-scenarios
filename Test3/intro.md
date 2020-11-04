@@ -1,5 +1,4 @@
 # <p align="center">Fundamental Linear Algebra using Python</p>
-## <p align="center">Introduction to Vector Algebra using Python</p>
 
 ## What is Linear Algebra?
 Linear Algebra is the branch of mathematics that deals with vector spaces and matrices. It is the mathematics of data, dealing with its creation, representation, transformation, and consumption using various concepts of vectors and matrices.
@@ -12,10 +11,10 @@ This scenario is a part of a five-part set of katacoda scenarios. These scenario
 * Basics of vectors
 * Representing vectors in Numpy
 * Visualizing vectors using Matplotlib
+* Magnitude of a vector
+* Unit vector
 * Vector addition
 * Scalar multiplication of vectors
 * Vector subtraction
-* Magnitude of a vector
-* Unit vectors
 * Dot product
 * Cross product

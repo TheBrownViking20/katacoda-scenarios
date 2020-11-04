@@ -36,11 +36,14 @@ Run `vector.py` using the following command:
 #### Some rules of thumb for Scalar Multiplication
 Essentially scalar multiplication enables all elements of the vector to be individually multiplied by the scalar. Therefore, here are some general rules:
 * Vector remains the same if scalar multiplication is done with +1.
-* Scalar multiplication with any positive integer other than 1 changes the magnitude of the vector but the direction remains the same.
+* Scalar multiplication with any positive integer other than 1 changes the magnitude of the vector but the direction remains the same. (Click the image below to zoom in for a better view)
+
 ![Scalar multiplication 3](./assets/sm3.jpg)
-* Scalar multiplication with -1 reverses the direction of the vector but the magnitude remains the same.
-* Scalar multiplication any other negative integer reverses the direction of the vector and also changes the magnitude.
-![Scalar multiplication 5](./assets/sm5.jpg)
 * Scalar multiplication with any real number between -1 and 1, i.e., fractions decreases the magnitude of the vector.
+
 ![Scalar multiplication 4](./assets/sm4.jpg)
 * Scalar multiplication with any real number less than -1 and greater than 1 increases the magnitude of the vector.
+* Scalar multiplication with -1 reverses the direction of the vector but the magnitude remains the same.
+
+![Scalar multiplication 5](./assets/sm5.jpg)
+* Scalar multiplication any other negative integer reverses the direction of the vector and also changes the magnitude.

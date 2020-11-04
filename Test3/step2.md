@@ -21,7 +21,7 @@ import matplotlib.pyplot as plt
 # Define origin or location
 # This is defined tuple of lists
 origin = [0],[0]
-# Define vectors in same manner
+# Define vectors(directions) in same manner
 v1 = [4],[3]
 v2 = [-3],[3]
 v3 = [5],[6]
@@ -50,6 +50,8 @@ Click and view the newly formed `2Dvectors.png` file from the VScode sidebar.
 ## Plotting vectors in 3 dimensions. Given 3 vectors,
 
 ![3D vectors](./assets/3dvectors.jpg)
+
+We can plot these vectors in 3 dimensions. Copy the code below to the editor:
 
 <pre class="file" data-filename="vector.py" data-target="replace">
 import matplotlib.pyplot as plt
