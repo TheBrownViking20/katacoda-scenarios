@@ -42,6 +42,10 @@
         { 
           "file": "3dvectors.jpg",  
           "target": "~/images/"  
+        },
+        { 
+          "file": "unitvector.jpg",  
+          "target": "~/images/"  
         }
       ]
     }

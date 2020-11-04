@@ -1,4 +1,5 @@
 
+
 # Vectors and coordinate system
 Vectors are plotted using coordinate system. In geometry, coordinate system uses one or more numbers, or coordinates, to determine the position of the points or other geometric elements on a manifold like Euclidean space. On a euclidean space, a vector v = (2,3) can be represented as 2 units on x-axis and 3 units on y-axis. Similarly, a vector w = (2,3,4) can be represented as 2 units on x-axis, 3 units on y-axis and 4 units on z-axis.
 
@@ -75,7 +76,7 @@ ax.set_ylim(-6,6)
 ax.set_zlim(-6,6)
 ax.legend(loc=2)
 plt.title("3D representation of vectors")
-plt.savefig("3Dvectors.png")
+plt.savefig("3Dvectors.png", dpi=300)
 plt.show()
 </pre>
 
