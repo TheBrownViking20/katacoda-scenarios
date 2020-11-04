@@ -1,5 +1,3 @@
-
-
 ## What are vectors?
 Vectors are essentially objects that have a magnitude and a direction. In physics, vectors are visualised as directed line segments in a vector space(collection of vectors) whose length is the magnitude and the arrow indicates the direction.
 

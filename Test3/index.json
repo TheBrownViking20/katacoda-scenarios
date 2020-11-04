@@ -70,6 +70,26 @@
         { 
           "file": "pmaddition.jpg",  
           "target": "~/images/"  
+        },
+        { 
+          "file": "sm1.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "sm2.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "sm3.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "sm4.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "sm5.jpg",  
+          "target": "~/images/"  
         }
       ]
     }

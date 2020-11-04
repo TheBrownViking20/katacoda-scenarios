@@ -14,7 +14,7 @@ v1 = np.array([2,1,0])
 v2 = np.array([3,4,3])
 # Simple addition
 v12 = v1 + v2
-print("v12 = v1 + v2",v12)
+print("v12 = v1 + v2 =",v12)
 </pre>
 
 Run `vector.py` using the following command:
