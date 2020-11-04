@@ -29,15 +29,15 @@
       "client": [
         { 
           "file": "vectorexample.jpg",  
-          "target": "~/"  
+          "target": "~/images/"  
         },
         { 
           "file": "2dvectors.jpg",  
-          "target": "~/"  
+          "target": "~/images/"  
         },
         { 
           "file": "vectormagnitude.jpg",  
-          "target": "~/"  
+          "target": "~/images/"  
         }
       ]
     }
