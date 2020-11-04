@@ -28,7 +28,7 @@
     "assets": {
       "client": [
         { 
-          "file": "img1.PNG",  
+          "file": "images/vectorexample.jpg",  
           "target": "~/"  
         }
       ]

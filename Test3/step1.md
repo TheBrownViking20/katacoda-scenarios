@@ -1,3 +1,4 @@
+
 # Introduction to Vector Algebra using Python
 
 ## What are vectors?
@@ -5,30 +6,7 @@ Vectors are essentially objects that have a magnitude and a direction. In physic
 
 In data science, vectors are defined as points in a finite-dimensional space which can represent numeric data. For example, if an E-commerce website has data about their customers like shoe size, waist size and height, it can be represented as a collection of three dimensional vectors(shoe size, waist size, height). Below is a vector representing a height of 180cm, a waist size of 32cm and a UK 12 as shoe size.
 
-\begin{equation*}
-\overrightarrow{v1} =
-\begin{pmatrix}  
-180 \\ 
-32 \\ 
-12 
-\end{pmatrix}
-\end{equation*}
-
-![Vector Example](./assets/img1.PNG)
-
-![Vector Example 2](./assets/img1.png)
-
-![Vector Example 3](assets/img1.PNG)
-
-![Vector Example 4](assets/img1.png)
-
-![Vector Example 5](./assets/img2.JPG)
-
-![Vector Example 6](./assets/img2.jpg)
-
-![Vector Example 7](assets/img2.JPG)
-
-![Vector Example 8](assets/img2.jpg)
+![Vector Example](./assets/images/vectorexample.jpg)
 
 ## What is Numpy?
 Numpy is a numeric computing library for python that provides support for multi-dimensional arrays and matrices, along with associated mathematical functions. Numpy arrays can be represented as vectors. Copy the code below to the editor to represent the above vector using a numpy array:
