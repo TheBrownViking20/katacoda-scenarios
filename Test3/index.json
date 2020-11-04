@@ -1,8 +1,8 @@
 {
-  "title": "Test",
-  "description": "Test",
+  "title": "Introduction to Vector Algebra using Python",
+  "description": "In this scenario, you will be introduced to the basics of vector algebra using Numpy and other python libraries.",
   "difficulty": "Beginner",
-  "time": "10 minutes",
+  "time": "25 minutes",
   "details": {
     "steps": [
       {
@@ -27,16 +27,8 @@
     "assets": {
       "client": [
         { 
-          "file": "data.csv",  
+          "file": "L1-S1-A1-VectorExample.png",  
           "target": "~/"  
-        },
-        { 
-          "file": "sc.png",  
-          "target": "~/"  
-        },
-        { 
-          "file": "SLR-scratch.ipynb",  
-          "target": "~/"
         }
       ]
     }
