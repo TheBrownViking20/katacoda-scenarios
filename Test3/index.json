@@ -38,7 +38,7 @@
         { 
           "file": "vectormagnitude.jpg",  
           "target": "~/"  
-        },
+        }
       ]
     }
   },
