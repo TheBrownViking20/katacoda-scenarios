@@ -12,7 +12,7 @@ Vectors are represented as arrows while plotting their positions on a graph. Mat
 
 First, let's plot some vectors in 2 dimensions.
 
-![Vector Example](./assets/images/2dvectors.jpg)
+![2D vectors](./assets/2dvectors.jpg)
 
 Copy the following code to the editor:
 

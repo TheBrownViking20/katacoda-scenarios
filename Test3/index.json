@@ -28,9 +28,17 @@
     "assets": {
       "client": [
         { 
-          "file": "images/vectorexample.jpg",  
+          "file": "vectorexample.jpg",  
           "target": "~/"  
-        }
+        },
+        { 
+          "file": "2dvectors.jpg",  
+          "target": "~/"  
+        },
+        { 
+          "file": "vectormagnitude.jpg",  
+          "target": "~/"  
+        },
       ]
     }
   },
