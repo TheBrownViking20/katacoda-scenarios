@@ -28,7 +28,7 @@
     "assets": {
       "client": [
         { 
-          "file": "L1-S1-A1-VectorExample.PNG",  
+          "file": "img1.PNG",  
           "target": "~/"  
         }
       ]
