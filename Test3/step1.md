@@ -7,6 +7,12 @@ In data science, vectors are defined as points in a finite-dimensional space whi
 
 ![VectorExample](./assets/L1-S1-A1-VectorExample.PNG)
 
+![VectorExample2](./assets/L1-S1-A1-VectorExample.png)
+
+![VectorExample3](assets/L1-S1-A1-VectorExample.png)
+
+![VectorExample4](../assets/L1-S1-A1-VectorExample.png)
+
 ## What is Numpy?
 Numpy is a numeric computing library for python that provides support for multi-dimensional arrays and matrices, along with associated mathematical functions. Numpy arrays can be represented as vectors. Copy the code below to the editor to represent the above vector using a numpy array:
 
