@@ -7,7 +7,7 @@ In data science, vectors are defined as points in a finite-dimensional space whi
 
 ![Vector Example](/root/L1-S1-A1-VectorExample.PNG)
 
-![VectorExample2](./assets/L1-S1-A1-VectorExample.png)
+![VectorExample2](./assets/L1-S1-A1-VectorExample.PNG?raw=true)
 
 ![VectorExample3](assets/L1-S1-A1-VectorExample.PNG)
 
