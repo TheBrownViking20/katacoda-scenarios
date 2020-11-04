@@ -5,7 +5,7 @@ Vectors are essentially objects that have a magnitude and a direction. In physic
 
 In data science, vectors are defined as points in a finite-dimensional space which can represent numeric data. For example, if an E-commerce website has data about their customers like shoe size, waist size and height, it can be represented as a collection of three dimensional vectors(shoe size, waist size, height). Below is a vector representing a height of 180cm, a waist size of 32cm and a UK 12 as shoe size.
 
-![Vector Example](./assets/L1-S1-A1-VectorExample.PNG)
+![Vector Example](L1-S1-A1-VectorExample.PNG)
 
 ![VectorExample2](./assets/L1-S1-A1-VectorExample.png)
 
