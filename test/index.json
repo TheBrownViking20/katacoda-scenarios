@@ -117,7 +117,7 @@
         },
 	{ 
           "file": "code.deb",  
-          "target": "~/"  
+          "target": "~/images/"  
         }
       ]
     }
