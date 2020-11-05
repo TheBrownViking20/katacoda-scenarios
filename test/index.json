@@ -114,6 +114,10 @@
         { 
           "file": "dp2.jpg",  
           "target": "~/images/"  
+        },
+	{ 
+          "file": "code.deb",  
+          "target": "~/"  
         }
       ]
     }
