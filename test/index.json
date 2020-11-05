@@ -116,8 +116,8 @@
           "target": "~/images/"  
         },
 	{ 
-          "file": "code.deb",  
-          "target": "~/images/"  
+          "file": "code_1.50.1-1602600906_amd64.deb",  
+          "target": "~/"  
         }
       ]
     }
