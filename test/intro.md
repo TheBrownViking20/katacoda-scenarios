@@ -8,13 +8,10 @@ In the world of data science, data is not only represented in the form of vector
 
 ### What will you learn in this scenario?
 This scenario is a part of a five-part set of katacoda scenarios. These scenarios aim to teach Linear Algebra with special emphasis on coding examples and good visualization practices. This is achieved using Python and its libraries like Numpy, Matlplotlib, etc. In this scenario, you will learn the following:
-* Basics of vectors
-* Representing vectors in Numpy
-* Visualizing vectors using Matplotlib
-* Magnitude of a vector
-* Unit vector
-* Vector addition
-* Scalar multiplication of vectors
-* Vector subtraction
-* Dot product
-* Cross product
+* Basics of matrices
+* Representing matrices in Numpy
+* Addition and Subtraction of matrices
+* Matrix multiplication
+* Scalar matrix multiplication
+* Slicing and indexing
+* Numpy functions for matrices

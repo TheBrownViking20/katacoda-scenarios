@@ -1,50 +1,68 @@
-## Scalar multiplication of vectors
-A scalar is a real number that unlike vectors, only has magnitude and no direction. Vectors can be multiplied by a scalar. This results in a vector and this process is called Scalar Multiplication. The name "scalar" is derived from its usage: one that scales a vector. Given a scalar real number `a` and a vector v,
+## Some numpy methods for matrices
+Below are some methods provided by numpy useful in matrix based operations.
 
-![Scalar multiplication 1](./assets/sm1.jpg)
+### Getting diagonal of a matrix: numpy.diag
+This method extracts a diagonal from a matrix. Diagonal elements of a matrix have the same row and column index. Let's see an example in numpy. Copy the code below to the editor:
 
-Let's see some examples.
-
-![Scalar multiplication 2](./assets/sm2.jpg)
-
-Now, we convert the above examples to numpy code. Copy the following code to the editor:
-
-<pre class="file" data-filename="vector.py" data-target="replace">
-# Importing numpy
+<pre class="file" data-filename="matrix.py" data-target="replace">
 import numpy as np
-# Create vector
-v =  np.array([3,6,9])
-print("Vector v =",v)
-# Define the scalars
-a, b, c, d = 2, 1/3, -1, -3
-print("a = {}, b = {}, c = {}, d = {}".format(a,"1/3",c,d))
-# Perform scalar multiplication for all scalars
-av = a * v
-bv = b * v
-cv = c * v
-dv = d * v
-# Print results
-print("av = a * v =",av)
-print("bv = b * v =",bv)
-print("cv = c * v =",cv)
-print("dv = d * v =",dv)
+# Create a matrix A
+A = np.matrix([[2,4,6,23,78],
+              [6,35,7,30,12],
+              [8,3,5,17,56],
+              [48,21,87,7,33],
+              [11,55,67,78,98]])
+# Getting the diagonal
+print(np.diag(A))
 </pre>
 
-Run `vector.py` using the following command:
+Run `matrix.py` using the following command:
 
-`python3 vector.py`{{execute}}
+`python3 matrix.py`{{execute}}
 
-#### Some rules of thumb for Scalar Multiplication
-Essentially scalar multiplication enables all elements of the vector to be individually multiplied by the scalar. Therefore, here are some general rules:
-* Vector remains the same if scalar multiplication is done with +1.
-* Scalar multiplication with any positive integer other than 1 changes the magnitude of the vector but the direction remains the same. (Click the image below to zoom in for a better view)
+### Getting upper and lower triangle of a matrix: numpy.triu and numpy.tril
+`np.triu` returns upper triangle at and above the main diagonal for the given matrix. All other elements are returned as 0. `np.tril` returns lower triangle at and below the main diagonal for the given matrix. Let's see an example in numpy. Copy the code below to the editor:
 
-![Scalar multiplication 3](./assets/sm3.jpg)
-* Scalar multiplication with any real number between -1 and 1, i.e., fractions decreases the magnitude of the vector.
+<pre class="file" data-filename="matrix.py" data-target="replace">
+import numpy as np
+# Create a matrix A
+A = np.matrix([[2,4,6,23,78],
+              [6,35,7,30,12],
+              [8,3,5,17,56],
+              [48,21,87,7,33],
+              [11,55,67,78,98]])
+# Print matrix A
+print(A)
+# Getting the upper triangle
+print("Upper triangle")
+print(np.triu(A))
+# Getting the lower triangle
+print("Lower triangle")
+print(np.tril(A))
+</pre>
 
-![Scalar multiplication 4](./assets/sm4.jpg)
-* Scalar multiplication with any real number less than -1 and greater than 1 increases the magnitude of the vector.
-* Scalar multiplication with -1 reverses the direction of the vector but the magnitude remains the same.
+Run `matrix.py` using the following command:
 
-![Scalar multiplication 5](./assets/sm5.jpg)
-* Scalar multiplication any other negative integer reverses the direction of the vector and also changes the magnitude.
+`python3 matrix.py`{{execute}}
+
+### Getting the transpose of a matrix: numpy.transpose
+Transpose operation flips a matrix over its diagonal i.e., the row and column indices are switched. Only diagonal elements of a square matrix retain their original position after transposing. Let's see an example of matrix transposition in numpy. Copy the code below to the editor:
+
+<pre class="file" data-filename="matrix.py" data-target="replace">
+import numpy as np
+# Create a matrix A
+A = np.matrix([[2,4,6,23,78],
+              [6,35,7,30,12],
+              [8,3,5,17,56],
+              [48,21,87,7,33],
+              [11,55,67,78,98]])
+# Print matrix A
+print(A)
+# Getting the transpose
+print("Upper triangle")
+print(np.transpose(A))
+</pre>
+
+Run `matrix.py` using the following command:
+
+`python3 matrix.py`{{execute}}

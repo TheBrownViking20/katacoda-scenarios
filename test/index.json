@@ -1,8 +1,8 @@
 {
-  "title": "Introduction to Vector Algebra using Python",
-  "description": "In this scenario, you will be introduced to the basics of vector algebra using Numpy and other python libraries.",
+  "title": "Introduction to Matrix Algebra using Python",
+  "description": "In this scenario, you will be introduced to matrices and related concepts using numpy and other python libraries.",
   "difficulty": "Beginner",
-  "time": "25 minutes",
+  "time": "15 minutes",
   "details": {
     "steps": [
       {
@@ -24,14 +24,6 @@
       {
         "title": "Step 5",
         "text": "step5.md"
-      },
-      {
-        "title": "Step 6",
-        "text": "step6.md"
-      },
-      {
-        "title": "Step 7",
-        "text": "step7.md"
       }
     ],
     "intro": {
@@ -44,80 +36,32 @@
     "assets": {
       "client": [
         { 
-          "file": "vectorexample.jpg",  
+          "file": "matrixexample.jpg",  
           "target": "~/images/"  
         },
         { 
-          "file": "2dvectors.jpg",  
+          "file": "mataddsub1.jpg",  
           "target": "~/images/"  
         },
         { 
-          "file": "vectormagnitude.jpg",  
+          "file": "mataddsub2.jpg",  
           "target": "~/images/"  
         },
         { 
-          "file": "3dvectors.jpg",  
+          "file": "matmul1.jpg",  
           "target": "~/images/"  
         },
         { 
-          "file": "unitvector.jpg",  
+          "file": "matmul2.jpg",  
           "target": "~/images/"  
         },
         { 
-          "file": "vectoraddition.jpg",  
+          "file": "matmul3.jpg",  
           "target": "~/images/"  
         },
         { 
-          "file": "pmaddition.jpg",  
+          "file": "ss.jpg",  
           "target": "~/images/"  
-        },
-        { 
-          "file": "sm1.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "sm2.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "sm3.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "sm4.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "sm5.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "vs1.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "vs2.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "vs3.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "pmsubtraction.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "dp1.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "dp2.jpg",  
-          "target": "~/images/"  
-        },
-	{ 
-          "file": "code_1.50.1-1602600906_amd64.deb",  
-          "target": "~/"  
         }
       ]
     }

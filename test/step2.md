@@ -1,88 +1,75 @@
-# Vectors and coordinate system
-Vectors are plotted using coordinate system. In geometry, coordinate system uses one or more numbers, or coordinates, to determine the position of the points or other geometric elements on a manifold like Euclidean space. On a euclidean space, a vector v = (2,3) can be represented as 2 units on x-axis and 3 units on y-axis. Similarly, a vector w = (2,3,4) can be represented as 2 units on x-axis, 3 units on y-axis and 4 units on z-axis.
+## Addition and Subtraction of matrices
+As long as the dimensions of the matrices are same, the corresponding elements of matrices can be added or subtracted. Given two matrices,
 
-## Zero vector
-A vector is called a zero vector if all its elements are 0. This is also represented by the origin on the coordinate system. 
+![Matrix Addition and Subtraction 1](./assets/mataddsub1.jpg)
 
-## Plotting a vector using Matplotlib
-Matplotlib is a data visualization library for python that can be used to visualize vectors.
+Both A and B are 2 × 3 matrices. Following is a representation of addition and subtraction of these matrices:
 
-Vectors are represented as arrows while plotting their positions on a graph. Matplotlib offers quiver plot to plot vectors. Quiver plot accepts the location and directions of the vectors as its parameters.
+![Matrix Addition and Subtraction 2](./assets/mataddsub2.jpg)
 
-First, let's plot some vectors in 2 dimensions.
+We can do this swiftly using numpy. Copy the code below to the editor:
 
-![2D vectors](./assets/2dvectors.jpg)
-
-Copy the following code to the editor:
-
-<pre class="file" data-filename="vector.py" data-target="replace">
-# Import the matplotlib library
-import matplotlib.pyplot as plt
-# Define origin or location
-# This is defined tuple of lists
-origin = [0],[0]
-# Define vectors(directions) in same manner
-v1 = [4],[3]
-v2 = [-3],[3]
-v3 = [5],[6]
-# Plotting the 3 vectors with matplotlib.quiver
-plt.quiver(*origin, *v1, color='r', units='xy', angles='xy', scale_units='xy', scale=1, label='v1 = [4,3]')
-plt.quiver(*origin, *v2, color='b', units='xy', angles='xy', scale_units='xy', scale=1, label='v2 = [-3,3]')
-plt.quiver(*origin, *v3, color='g', units='xy', angles='xy', scale_units='xy', scale=1, label='v3 = [5,6]')
-# units, angles, scale_units and scale are used to scale the graph. Below, the xlim and ylim are also used for the same purpose.
-plt.xlim(-8, 8)
-plt.ylim(-8, 8)
-# Setting location for legend
-plt.legend(loc=2)
-plt.xlabel('X')
-plt.ylabel('Y')
-plt.title("2D representation of vectors")
-# Saving image as a PNG file
-plt.savefig('2Dvectors.png')
-plt.show()
+<pre class="file" data-filename="matrix.py" data-target="replace">
+# Importing numpy
+import numpy as np
+# Create matrix A using numpy
+A = np.matrix([[2,4,6],
+             [3,4,7]])
+# Create matrix B using numpy
+B = np.matrix([[1,2,4],
+             [2,3,5]])
+# Perform addition of matrices
+m_sum = A + B
+# Perform subtraction of matrices
+m_diff = A - B
+# Print the results
+print("A + B = \n")
+print(m_sum)
+print("______________________________________")
+print("A - B = \n")
+print(m_diff)
 </pre>
 
-Run `vector.py` using the following command:
+Run `matrix.py` using the following command:
 
-`python3 vector.py`{{execute}}
+`python3 matrix.py`{{execute}}
 
-Click and view the newly formed `2Dvectors.png` file from the VScode sidebar.
+If the shapes of the matrices are not same, they must be broadcastable to a common shape for matrix addition in numpy to be possible. Copy the code below to the editor to see an example for the same:
 
-## Plotting vectors in 3 dimensions. Given 3 vectors,
-
-![3D vectors](./assets/3dvectors.jpg)
-
-We can plot these vectors in 3 dimensions. Copy the code below to the editor:
-
-<pre class="file" data-filename="vector.py" data-target="replace">
-import matplotlib.pyplot as plt
-# mplot3d for 3D plots
-from mpl_toolkits.mplot3d import Axes3D
-
-fig = plt.figure(figsize=(8,8))
-origin = [0],[0],[0]
-v1 = [2],[1],[0]
-v2 = [3],[4],[5]
-v3 = [5],[5],[5]
-# projection='3d' for a three-dimensional graph
-ax = fig.add_subplot(111, projection='3d')
-ax.quiver(*origin, *v1, color='r', label='v1 = [2,1,0]', arrow_length_ratio=0.2)
-ax.quiver(*origin, *v2, color='b', label='v2 = [3,4,5]', arrow_length_ratio=0.05)
-ax.quiver(*origin, *v3, color='g', label='v3 = [5,5,5]', arrow_length_ratio=0.05)
-ax.set_xlabel('X')
-ax.set_ylabel('Y')
-ax.set_zlabel('Z')
-ax.set_xlim(-6,6)
-ax.set_ylim(-6,6)
-ax.set_zlim(-6,6)
-ax.legend(loc=2)
-plt.title("3D representation of vectors")
-plt.savefig("3Dvectors.png", dpi=300)
-plt.show()
+<pre class="file" data-filename="matrix.py" data-target="replace">
+# Importing numpy
+import numpy as np
+# Create a matrix A using numpy
+A = np.matrix([[2,4,6],
+             [3,4,7]])
+# Create a matrix B using numpy             
+B = np.matrix([1,2,4])
+print("A + B = \n")
+print(A + B)
 </pre>
 
-Run `vector.py` using the following command:
+Run `matrix.py` using the following command:
 
-`python3 vector.py`{{execute}}
+`python3 matrix.py`{{execute}}
 
-Click and view the newly formed `3Dvectors.png` file from the VScode sidebar.
+The above operation is possible as the shape of matrix B is same as that of a row of matrix A. So, matrix B is added to each row of matrix A. 
+
+Copy the code below to the editor to see another example:
+
+<pre class="file" data-filename="matrix.py" data-target="replace">
+# Importing numpy
+import numpy as np
+# Create a matrix C using numpy
+C = np.matrix([[2,4,6],
+             [3,4,7]])
+# Create a matrix D using numpy
+D = np.matrix([[1,2]])
+print("C + D = \n")
+print(C + D)
+</pre>
+
+Run `matrix.py` using the following command:
+
+`python3 matrix.py`{{execute}}
+
+The code shows an error for matrix addition as matrices C and D are not broadcastable to a common shape.
