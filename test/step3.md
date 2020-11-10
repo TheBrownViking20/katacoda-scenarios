@@ -25,7 +25,7 @@ N = np.matrix([[2,4],
 # Perform matrix multiplication
 MN = np.matmul(M,N)
 # Print the result
-print("MN = \n")
+print("MN =")
 print(MN)
 </pre>
 
@@ -39,19 +39,19 @@ We have some alternate ways to perform matrix multiplication using numpy. Append
 # Alternate method 1
 MN = M @ N
 # Print the result
-print("MN = \n")
+print("MN = M @ N")
 print(MN)
 
 # Alternate method 2
 MN = M * N
 # Print the result
-print("MN = \n")
+print("MN = M * N")
 print(MN)
 
 # Alternate method 3
 MN = np.dot(M,N)
 # Print the result
-print("MN = \n")
+print("MN = np.dot(M,N)")
 print(MN)
 </pre>
 

@@ -59,7 +59,7 @@ A = np.matrix([[2,4,6,23,78],
 # Print matrix A
 print(A)
 # Getting the transpose
-print("Upper triangle")
+print("Transpose of matrix A")
 print(np.transpose(A))
 </pre>
 

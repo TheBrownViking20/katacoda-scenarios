@@ -24,11 +24,11 @@ C= np.matrix([[2,4],
              [8,3]])
 # Print the matrices
 print("Matrix A:")
-print("\n",A,"\n")
+print(A,"\n")
 print("Matrix B:")
-print("\n",B,"\n")
+print(B,"\n")
 print("Matrix C:")
-print("\n",C,"\n")
+print(C)
 </pre>
 
 Read the comments in the above code for better understanding. You can run `matrix.py` using the following command:

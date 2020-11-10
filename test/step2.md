@@ -23,10 +23,10 @@ m_sum = A + B
 # Perform subtraction of matrices
 m_diff = A - B
 # Print the results
-print("A + B = \n")
+print("A + B =")
 print(m_sum)
 print("______________________________________")
-print("A - B = \n")
+print("A - B =")
 print(m_diff)
 </pre>
 
@@ -44,7 +44,7 @@ A = np.matrix([[2,4,6],
              [3,4,7]])
 # Create a matrix B using numpy             
 B = np.matrix([1,2,4])
-print("A + B = \n")
+print("A + B =")
 print(A + B)
 </pre>
 
@@ -64,7 +64,7 @@ C = np.matrix([[2,4,6],
              [3,4,7]])
 # Create a matrix D using numpy
 D = np.matrix([[1,2]])
-print("C + D = \n")
+print("C + D =")
 print(C + D)
 </pre>
 
