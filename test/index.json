@@ -54,6 +54,14 @@
         { 
           "file": "d5.jpg",  
           "target": "~/images/"  
+        },
+        { 
+          "file": "gj.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "i3.jpg",  
+          "target": "~/images/"  
         }
       ]
     }

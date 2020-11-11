@@ -1,7 +1,7 @@
 ## What is the determinant of a matrix?
 According to Wikipedia, Determinant is a scalar value computed from the elements of a square matrix that encodes certain properties of the linear transformation described by the matrix. It captures how linear transformations change area or volume and is also useful in solving linear equations. The determinant of a square matrix A is denoted as det(A), det A or |A|.
 
-Given a 2 x 2 matrix,
+Given a 2 × 2 matrix A,
 
 ![Determinant 1](./assets/d1.jpg)
 
@@ -31,8 +31,8 @@ print("Cross Multiplication of elements = 1*4 - 2*3 =",A22[0,0]*A22[1,1] - A22[0
 print("Using numpy, determinant of A22 =",int(np.linalg.det(A22))) # converted to int for simplicity
 </pre>
 
-Run `matrix.py` using the following command:
+Run `equation.py` using the following command:
 
-`python3 matrix.py`{{execute}}
+`python3 equation.py`{{execute}}
 
 Both approaches should return the same result.
