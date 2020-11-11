@@ -6,42 +6,42 @@ Matrices can be transformed into a simpler form like row echelon form which make
 
 Following is a quiz on the topic of row echelon form. You have to determine whether a given matrix is in row echelon form. You can't proceed to the next step till you have successfully answered all questions. So, keep trying until you get all the answers correct.
 
-#### Q1:
+##### Q1:
 ![Question 1](./assets/q1.jpg)
 >>Does the above matrix satisfy all three conditions of row echelon form?<<
 (*) Yes
 () No
 
 
-#### Q2:
+##### Q2:
 ![Question 2](./assets/q2.jpg)
 >>Does the above matrix satisfy all three conditions of row echelon form?<<
 (*) Yes
 () No
 
 
-#### Q3:
+##### Q3:
 ![Question 3](./assets/q3.jpg)
 >>Does the above matrix satisfy all three conditions of row echelon form?<<
 (*) Yes
 () No
 
 
-#### Q4:
+##### Q4:
 ![Question 4](./assets/q4.jpg)
 >>Does the above matrix satisfy all three conditions of row echelon form?<<
 () Yes
 (*) No
 
 
-#### Q5:
+##### Q5:
 ![Question 5](./assets/q5.jpg)
 >>Does the above matrix satisfy all three conditions of row echelon form?<<
 () Yes
 (*) No
 
 
-#### Q6:
+##### Q6:
 ![Question 6](./assets/q6.jpg)
 >>Does the above matrix satisfy all three conditions of row echelon form?<<
 () Yes

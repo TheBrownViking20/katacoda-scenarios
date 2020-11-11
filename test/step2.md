@@ -105,7 +105,7 @@ print("Augemented matrix after Step 4:")
 print(MI)
 </pre>
 
-Run `equation.py` using the following command to get results of step 3:
+Run `equation.py` using the following command to get results of step 4:
 
 `python3 equation.py`{{execute}}
 
@@ -126,11 +126,11 @@ print("Inverse of matrix M:")
 print(M_inverse)
 </pre>
 
-Run `equation.py` using the following command to get results of step 3:
+Run `equation.py` using the following command to get results of step 5:
 
 `python3 equation.py`{{execute}}
 
-Alternatively, numpy provides np.linalg.inv() method to calculate the inverse of an invertible matrix. Let's see an example of this method Copy the following code to the editor:
+Alternatively, numpy provides np.linalg.inv() method to calculate the inverse of an invertible matrix. Let's see an example of this method. Copy the following code to the editor:
 
 <pre class="file" data-filename="equation.py" data-target="replace">
 # Importing numpy
@@ -148,6 +148,6 @@ print("Inverse of matrix M:")
 print(inverse_M)
 </pre>
 
-Run `equation.py` using the following command to get results of step 1:
+Run `equation.py` using the following command:
 
 `python3 equation.py`{{execute}}
