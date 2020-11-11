@@ -1,36 +1,15 @@
-## What is a matrix?
-According to Wikipedia: "In mathematics, a matrix (plural matrices) is a rectangular array of numbers, symbols, or expressions, arranged in rows and columns." Matrices are essentially two-dimensional arrays. Here, A is a 3 × 3 matrix i.e., it has 3 rows and 3 columns. Also, B is a 2 × 3 matrix i.e., B has 2 rows and 3 columns and C is a 3 × 2 matrix, having 3 columns and 2 rows.   
+## What is the determinant of a matrix?
+According to Wikipedia, Determinant is a scalar value computed from the elements of a square matrix that encodes certain properties of the linear transformation described by the matrix. It captures how linear transformations change area or volume and is also useful in solving linear equations. The determinant of a square matrix A is denoted as det(A), det A or |A|.
 
-![Matrix Example](./assets/matrixexample.jpg)
+Given a 2 x 2 matrix,
+![Determinant 1](./assets/d1.jpg)
 
-Essentially, you can count the number of rows in a matrix by counting the horizontal lines of numbers from up to down. Similarly, you can count the number of columns in a matrix by counting the vertical lines of numbers from left to right.
+We can calculate its determinant using simple cross-multiplication.
+![Determinant 2](./assets/d2.jpg)
 
-## What is Numpy?
-Numpy is a numeric computing library for python that provides support for multi-dimensional arrays and matrices, along with associated mathematical functions. Numpy arrays can be represented as matrices. Copy the code below to the editor to represent the above matrices using numpy arrays:
+Given a 3 × 3 matrix B,
+![Determinant 3](./assets/d3.jpg)
 
-<pre class="file" data-filename="matrix.py" data-target="replace">
-# Importing numpy
-import numpy as np
-# Create matrix A using numpy
-A = np.matrix([[2,4,6],
-             [3,4,7],
-             [8,3,5]])
-# Create matrix B using numpy
-B = np.matrix([[2,4,6],
-             [3,4,7]])
-# Create matrix C using numpy             
-C= np.matrix([[2,4],
-             [3,4],
-             [8,3]])
-# Print the matrices
-print("Matrix A:")
-print(A,"\n")
-print("Matrix B:")
-print(B,"\n")
-print("Matrix C:")
-print(C)
-</pre>
-
-Read the comments in the above code for better understanding. You can run `matrix.py` using the following command:
-
-`python3 matrix.py`{{execute}}
+Therefore,
+![Determinant 4](./assets/d4.jpg)
+![Determinant 5](./assets/d5.jpg)

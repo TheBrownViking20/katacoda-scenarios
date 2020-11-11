@@ -1,6 +1,6 @@
 {
-  "title": "Introduction to Matrix Algebra using Python",
-  "description": "In this scenario, you will be introduced to matrices and related concepts using numpy and other python libraries.",
+  "title": "System of linear equations using Python",
+  "description": "In this scenario, you will explore methods to solve linear equations using matrices and other important concepts using numpy and other python libraries.",
   "difficulty": "Beginner",
   "time": "15 minutes",
   "details": {
@@ -36,31 +36,23 @@
     "assets": {
       "client": [
         { 
-          "file": "matrixexample.jpg",  
+          "file": "d1.jpg",  
           "target": "~/images/"  
         },
         { 
-          "file": "mataddsub1.jpg",  
+          "file": "d2.jpg",  
           "target": "~/images/"  
         },
         { 
-          "file": "mataddsub2.jpg",  
+          "file": "d3.jpg",  
           "target": "~/images/"  
         },
         { 
-          "file": "matmul1.jpg",  
+          "file": "d4.jpg",  
           "target": "~/images/"  
         },
         { 
-          "file": "matmul2.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "matmul3.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "ss.jpg",  
+          "file": "d5.jpg",  
           "target": "~/images/"  
         }
       ]
