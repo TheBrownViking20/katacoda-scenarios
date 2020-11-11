@@ -1,84 +1,37 @@
-## Matrix multiplication
-Matrix multiplication is a binary operation that produces a matrix from two matrices. For matrix multiplication to be possible, the number of columns in the first matrix must be equal to the number of rows in the second matrix. The resultant matrix has number of rows equal to the first matrix and number of columns equal to the second matrix.
+## Row echelon form
+Matrices can be transformed into a simpler form like row echelon form which makes it easier to solve linear equations using the matrices. For a matrix to be in row echelon form, three conditions have to be met. Following are the three conditions:
+* Starting from the left and moving right, the leading entry in each row of the matrix is 1. Leading entry is the first non-zero entry in a row.
+* Every leading 1 in the matrix must be to the right of the leading 1 above it.
+* Rows with all zeros are located below all the non-zero rows.
 
-The first element of the first row of the resultant matrix is the dot product of the first row of the first matrix and the first column of the second matrix. Similarly, the second element of the second row of the resultant matrix is the dot product of the second row of the first matrix and the second column of the second matrix. Other elements are calculated in the same manner. Given two matrices,
+Following is a quiz on the topic of row echelon form. You have to determine whether a given matrix is in row echelon form. You can't proceed to the next step till you have successfully answered all questions. So, keep trying until you get all the answers correct.
 
-![Matrix Multiplication 1](./assets/matmul1.jpg)
+![Question 1](./assets/q1.jpg)
+>>Q1: Does the above matrix satisfy all three conditions of row echelon form?<<
+(*) Yes
+() No
 
-M is a 2 × 3 matrix and N is a 3 × 2 matrix. As number of columns in M is equal to number of rows in N, matrix multiplication is possible. After matrix multiplication, the resulting matrix product MN is a 2 × 2 matrix as M has 2 rows and N has two columns.
+![Question 2](./assets/q2.jpg)
+>>Q2: Does the above matrix satisfy all three conditions of row echelon form?<<
+(*) Yes
+() No
 
-![Matrix Multiplication 2](./assets/matmul2.jpg)
-![Matrix Multiplication 3](./assets/matmul3.jpg)
+![Question 3](./assets/q3.jpg)
+>>Q3: Does the above matrix satisfy all three conditions of row echelon form?<<
+(*) Yes
+() No
 
-Let's see how we can perform matrix multiplication using numpy. Copy the code below to the editor:
+![Question 4](./assets/q4.jpg)
+>>Q4: Does the above matrix satisfy all three conditions of row echelon form?<<
+() Yes
+(*) No
 
-<pre class="file" data-filename="matrix.py" data-target="replace">
-# Importing numpy
-import numpy as np
-# Create matrix M using numpy
-M = np.matrix([[2,4,6],
-              [3,4,7]])
-# Create matrix N using numpy
-N = np.matrix([[2,4],
-              [3,4],
-              [8,3]])
-# Perform matrix multiplication
-MN = np.matmul(M,N)
-# Print the result
-print("MN =")
-print(MN)
-</pre>
+![Question 5](./assets/q5.jpg)
+>>Q5: Does the above matrix satisfy all three conditions of row echelon form?<<
+() Yes
+(*) No
 
-Run `matrix.py` using the following command:
-
-`python3 matrix.py`{{execute}}
-
-We have some alternate ways to perform matrix multiplication using numpy. Append the code below to the existing code:
-
-<pre class="file" data-filename="matrix.py" data-target="append">
-# Alternate method 1
-MN = M @ N
-# Print the result
-print("MN = M @ N")
-print(MN)
-
-# Alternate method 2
-MN = M * N
-# Print the result
-print("MN = M * N")
-print(MN)
-
-# Alternate method 3
-MN = np.dot(M,N)
-# Print the result
-print("MN = np.dot(M,N)")
-print(MN)
-</pre>
-
-Run `matrix.py` using the following command:
-
-`python3 matrix.py`{{execute}}
-
-All these methods produce the same result.
-
-## Scalar Matrix Multiplication
-A matrix can be multiplied by a scalar term. All elements of the resultant matrix are the products of the scalar term with the elements of the original matrix. Let's see an example for scalar multiplication in numpy for a 3 × 3 matrix V and scalar integer s = 4. Copy the code below to the editor:
-
-<pre class="file" data-filename="matrix.py" data-target="replace">
-# Importing numpy
-import numpy as np
-# Create matrix V using numpy
-V = np.matrix([[1,2,3],
-              [4,5,6],
-              [7,8,9]])
-# Scalar entity s
-s = 4
-# Perform scalar multiplication
-sV = s * V
-# Print the result
-print(sV)
-</pre>
-
-Run `matrix.py` using the following command:
-
-`python3 matrix.py`{{execute}}
+![Question 6](./assets/q6.jpg)
+>>Q6: Does the above matrix satisfy all three conditions of row echelon form?<<
+() Yes
+(*) No

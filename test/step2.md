@@ -113,7 +113,7 @@ We have obtained the identity matrix in the first three columns of (M|I). The la
 
 We have obtained the identity matrix in the first three columns of (M|I). The last three columns of (M|I) represent the inverse of M.
 
-Step 5: Finally, extract inverse of matrix M from (M|I). This is done through slicing the augmented matrix.
+**Step 5:** Finally, extract inverse of matrix M from (M|I). This is done through slicing the augmented matrix.
 
 Append the following code to the editor: 
 
@@ -123,9 +123,31 @@ M_inverse = MI[-3:,-3:]
 
 # Printing the inverse matrix
 print("Inverse of matrix M:")
-print(MI)
+print(M_inverse)
 </pre>
 
 Run `equation.py` using the following command to get results of step 3:
+
+`python3 equation.py`{{execute}}
+
+Alternatively, numpy provides np.linalg.inv() method to calculate the inverse of an invertible matrix. Let's see an example of this method Copy the following code to the editor:
+
+<pre class="file" data-filename="equation.py" data-target="replace">
+# Importing numpy
+import numpy as np
+# Create matrix M
+M = np.matrix([[1,4,3],
+               [1,3,3],
+               [1,3,4]])
+
+# Calculate the inverse matrix of M
+inverse_M = np.linalg.inv(M)
+
+# Printing the inverse matrix
+print("Inverse of matrix M:")
+print(inverse_M)
+</pre>
+
+Run `equation.py` using the following command to get results of step 1:
 
 `python3 equation.py`{{execute}}
