@@ -121,6 +121,7 @@ Append the following code to the editor:
 ans = Ab[:,-1]
 
 # Printing the results
+print("Values of x, y and z respectively:")
 print(ans)
 </pre>
 
@@ -148,6 +149,7 @@ b = np.matrix([[230.0],
 ans = np.linalg.solve(A,b)
 
 # Printing the results
+print("Values of x, y and z respectively:")
 print(ans)
 </pre>
 
