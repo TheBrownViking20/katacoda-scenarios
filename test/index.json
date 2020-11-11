@@ -15,7 +15,8 @@
       },
       {
         "title": "Step 3",
-        "text": "step3.md"
+        "text": "step3.md",
+        "answers": "step3-answers.md"
       },
       {
         "title": "Step 4",

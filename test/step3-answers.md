@@ -7,36 +7,24 @@ Matrices can be transformed into a simpler form like row echelon form which make
 Following is a quiz on the topic of row echelon form. You have to determine whether a given matrix is in row echelon form. You can't proceed to the next step till you have successfully answered all questions. So, keep trying until you get all the answers correct.
 
 ![Question 1](./assets/q1.jpg)
->>Q1: Does the above matrix satisfy all three conditions of row echelon form?<<
-(*) Yes
-() No
+The above matrix satisfies all three conditions of row echelon form.
 
 
 ![Question 2](./assets/q2.jpg)
->>Q2: Does the above matrix satisfy all three conditions of row echelon form?<<
-(*) Yes
-() No
+The above matrix satisfies all three conditions of row echelon form.
 
 
 ![Question 3](./assets/q3.jpg)
->>Q3: Does the above matrix satisfy all three conditions of row echelon form?<<
-(*) Yes
-() No
+The above matrix satisfies all three conditions of row echelon form.
 
 
 ![Question 4](./assets/q4.jpg)
->>Q4: Does the above matrix satisfy all three conditions of row echelon form?<<
-() Yes
-(*) No
+The above matrix doesn't satisfy all three conditions of row echelon form. A non-zero row is below a row with all zeros.
 
 
 ![Question 5](./assets/q5.jpg)
->>Q5: Does the above matrix satisfy all three conditions of row echelon form?<<
-() Yes
-(*) No
+The above matrix doesn't satisfy all three conditions of row echelon form. The leading 1 of the third row is to the left of the leading 1 above it.
 
 
 ![Question 6](./assets/q6.jpg)
->>Q6: Does the above matrix satisfy all three conditions of row echelon form?<<
-() Yes
-(*) No
+The above matrix doesn't satisfy all three conditions of row echelon form. First row doesn't start with a leading 1.
