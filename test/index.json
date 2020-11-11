@@ -16,7 +16,7 @@
       {
         "title": "Step 3",
         "text": "step3.md",
-        "answers": "step3-answers.md"
+        "answer": "step3-answers.md"
       },
       {
         "title": "Step 4",
@@ -62,6 +62,38 @@
         },
         { 
           "file": "i3.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "q1.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "q2.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "q3.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "q4.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "q5.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "q6.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "rr1.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "rr2.jpg",  
           "target": "~/images/"  
         }
       ]
