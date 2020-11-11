@@ -15,7 +15,9 @@ Every year John, a teacher buys medals for the best students of his class. The f
 Let x, y and z be the prices of gold, silver and bronze medals respectively. Following are the three equations formed:
 
 **5𝑥+7𝑦+3𝑧=230**
+
 **4𝑥+8𝑦+3𝑧=238**
+
 **2𝑥+5𝑦+6𝑧=184**
 
 Remembering the working of matrix multiplication, we can write these equations in the form of matrices.
@@ -137,7 +139,7 @@ Alternatively, numpy provides `np.linalg.solve()` method to solve a system of li
 <pre class="file" data-filename="equation.py" data-target="replace">
 # Importing numpy
 import numpy as np
-# Create matrices A and B
+# Create matrices A and b
 A = np.matrix([[5.0,7.0,3.0],
               [4.0,8.0,3.0],
               [2.0,5.0,6.0]])
