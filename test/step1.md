@@ -17,3 +17,22 @@ Therefore,
 
 ![Determinant 4](./assets/d4.jpg)
 ![Determinant 5](./assets/d5.jpg)
+
+Numpy's `numpy.linalg.det()` method gives us the determinant of a matrix. We will compare the above cross-multiplication based approach with the numpy approach. Copy the following code to the editor:
+
+<pre class="file" data-filename="equation.py" data-target="replace">
+# Importing numpy
+import numpy as np
+# Create matrix A22 using numpy
+A22 = np.matrix([[1,2],
+                [3,4]])
+# Comparing results of the above mathematical approach and numpy
+print("Cross Multiplication of elements = 1*4 - 2*3 =",A22[0,0]*A22[1,1] - A22[0,1]*A22[1,0])
+print("Using numpy, determinant of A22 =",int(np.linalg.det(A22))) # converted to int for simplicity
+</pre>
+
+Run `matrix.py` using the following command:
+
+`python3 matrix.py`{{execute}}
+
+Both approaches should return the same result.
