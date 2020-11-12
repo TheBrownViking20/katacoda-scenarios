@@ -51,7 +51,7 @@ for i in x:
         vector_v = np.matrix([[float(i)],
                               [float(j)]])
         # Rotate it
-        rotated_v = rotation(vector_v,clockwise=True,degree=100)
+        rotated_v = rotation(vector_v,clockwise=True,degree=10)
         # Transform vector for plotting
         v = [float(rotated_v[0])],[float(rotated_v[1])]
         # plt.quiver plots vector
@@ -62,7 +62,7 @@ plt.xlabel('X')
 plt.ylabel('Y')
 # Setting aspect ratio for the plot
 plt.gca().set_aspect('equal', adjustable='box')
-plt.title("100 degree clockwise rotation")
+plt.title("10 degree clockwise rotation")
 # Saving image as a PNG file
 plt.savefig('rvs.png')
 plt.show()

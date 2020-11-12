@@ -46,7 +46,55 @@
         { 
           "file": "2dvs.jpg",  
           "target": "~/images/"  
-        }
+        },
+        { 
+          "file": "shear.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "bv1.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "bv2.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "bv3.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "bv4.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "bv5.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "bv6.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "bv7.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "bv8.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "bv9.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "bv10.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "bv11.jpg",  
+          "target": "~/images/"  
+        }        
       ]
     }
   },
