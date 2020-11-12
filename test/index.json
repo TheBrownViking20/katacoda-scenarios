@@ -1,6 +1,6 @@
 {
-  "title": "System of linear equations using Python",
-  "description": "In this scenario, you will explore methods to solve linear equations using matrices and other important concepts using numpy and other python libraries.",
+  "title": "Exploring Vector Spaces using Python",
+  "description": "In this scenario, you will explore important concepts related to vector spaces like linear transformations, basis, linear independence, etc.",
   "difficulty": "Beginner",
   "time": "15 minutes",
   "details": {
@@ -38,62 +38,6 @@
       "client": [
         { 
           "file": "d1.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "d2.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "d3.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "d4.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "d5.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "gj.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "i3.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "q1.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "q2.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "q3.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "q4.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "q5.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "q6.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "rr1.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "rr2.jpg",  
           "target": "~/images/"  
         }
       ]

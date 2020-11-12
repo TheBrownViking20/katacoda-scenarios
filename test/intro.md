@@ -8,8 +8,10 @@ In the world of data science, data is not only represented in the form of vector
 
 ### What will you learn in this scenario?
 This scenario is a part of a five-part set of katacoda scenarios. These scenarios aim to teach Linear Algebra with special emphasis on coding examples and good visualization practices. This is achieved using Python and its libraries like Numpy, Matlplotlib, etc. In this scenario, you will learn the following:
-* Determinant of a matrix
-* Inverse of a matrix
-* Row echelon form
-* Reduced row echelon form
-* Gaussian elimination
+* Vector spaces
+* Plotting a vector space
+* Linear transformation on a vector space
+* Special linear transformations
+* Basis vectors
+* Changing basis
+* Linear independence

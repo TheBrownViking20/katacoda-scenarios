@@ -1,38 +1,64 @@
-## What is the determinant of a matrix?
-According to Wikipedia, Determinant is a scalar value computed from the elements of a square matrix that encodes certain properties of the linear transformation described by the matrix. It captures how linear transformations change area or volume and is also useful in solving linear equations. The determinant of a square matrix A is denoted as det(A), det A or |A|.
+## What is a vector space?
+A vector space is a set of vectors closed under finite vector addition and vector multiplication. A general example is n-dimensional space R<sup>n</sup>, where every element is represented by a list of real numbers. For a general vector space, the scalars are members of a field F, in which case V is called a vector space over F.
 
-Given a 2 × 2 matrix A,
+For all elements X,Y,Z in vector space V and any scalars r,s $\epsilon$ F, following conditions must hold:
+* Commutativity of vector addition:
+**X + Y = Y + X**
+* Associativity of vector addition:
+**X + (Y + Z) = (X + Y) + Z**
+* Additive identity:
+**0 + X = X + 0 = X**
+* Additive inverse:
+**X + (-X) = 0**
+* Associativity of vector multiplication:
+**r(sX) = (rs)X**
+* Distributive over scalar addition:
+**(r + s)X = rX + sX**
+* Distributive over vector addition:
+**r(X + Y) = rX + rY**
+* Scalar multiplication identity:
+**IX = X**
 
-![Determinant 1](./assets/d1.jpg)
+## Plotting a vector space
+Since a vector space is essentially a collection of vectors that meet certain conditions, it is possible to plot them using matplotlib. Below is a visual representation of a vector space consisting of 400 vectors where all vector elements are real numbers lying between -1 and 1. Magnitude of vectors in this vector space can't be greater than 1.
 
-We can calculate its determinant using simple cross-multiplication.
+Copy the following code to the editor:
 
-![Determinant 2](./assets/d2.jpg)
+<pre class="file" data-filename="vector.py" data-target="replace">
+# Importing matplotlib
+import matplotlib.pyplot as plt
+# Define origin or location
+# This is defined tuple of lists
+origin = [0],[0]
 
-Given a 3 × 3 matrix B,
+# Two arrays of 20 equally spaced elements, np.linspace() provides this functionality
+x = np.linspace(-1,1,num=20)
+y = np.linspace(-1,1,num=20)
 
-![Determinant 3](./assets/d3.jpg)
-
-Therefore,
-
-![Determinant 4](./assets/d4.jpg)
-![Determinant 5](./assets/d5.jpg)
-
-Numpy's `numpy.linalg.det()` method gives us the determinant of a matrix. We will compare the above cross-multiplication based approach with the numpy approach. Copy the following code to the editor:
-
-<pre class="file" data-filename="equation.py" data-target="replace">
-# Importing numpy
-import numpy as np
-# Create matrix A22 using numpy
-A22 = np.matrix([[1,2],
-                [3,4]])
-# Comparing results of the above mathematical approach and numpy
-print("Cross Multiplication of elements = 1*4 - 2*3 =",A22[0,0]*A22[1,1] - A22[0,1]*A22[1,0])
-print("Using numpy, determinant of A22 =",int(np.linalg.det(A22))) # converted to int for simplicity
+# Nested loops to combine x and y to create 20x20 = 400 vectors for the vector space
+# All combinations possible for a 2x1 vector have been covered using the nested loop
+# This nested loop creates 400 vectors in the vector space
+for i in x: # Runs 20 times
+    for j in y: # Runs 20 times every time the above loop runs
+        # Transform vector for plotting
+        v = [float(i)],[float(j)] # i and j lie between -1 and 1
+        # plt.quiver plots vector
+        plt.quiver(*origin, *v, color='r', units='xy', angles='xy', scale_units='xy', scale=1)
+plt.xlim(-4, 4)
+plt.ylim(-4, 4)
+plt.xlabel('X')
+plt.ylabel('Y')
+# Setting aspect ratio for the plot
+plt.gca().set_aspect('equal', adjustable='box')
+plt.title("2D representation of a vector space")
+# Saving image as a PNG file
+plt.savefig('2Dvectorspace.png')
+plt.show()
 </pre>
 
-Run `equation.py` using the following command:
+Run `vector.py` using the following command to get results of step 1:
 
-`python3 equation.py`{{execute}}
+`python3 vector.py`{{execute}} (This code doesn't produce any output on the terminal.)
 
-Both approaches should return the same result.
+Click and view the newly formed `2Dvectorspace.png`{{open}} file from the VScode sidebar.
+
