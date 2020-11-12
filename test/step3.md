@@ -50,7 +50,7 @@ def scaling(v,h_val=1,v_val=1):
 </pre>
 
 Following is the vector space we plotted in Step 1. Let's see how applying the scaling transformation changes this vector space. 
-![2D vector space](./assets/s2dvs.png)
+![2D vector space](./assets/2dvs.jpg)
 
 Copy the following code to the editor:
 
