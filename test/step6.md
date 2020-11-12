@@ -68,7 +68,7 @@ Run `vector.py` using the following command to get results of step 1:
 
 `python3 vector.py`{{execute}}
 
-Therefore, for basis vectors b1 and b2, vector v can be written as:
+Therefore, for basis vectors b<sub>1</sub> and b<sub>2</sub>, vector v can be written as:
 
 ![Basis vectors 9](./assets/bv9.jpg)
 
