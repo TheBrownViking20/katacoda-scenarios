@@ -42,6 +42,10 @@
         { 
           "file": "slt.jpg",  
           "target": "~/images/"  
+        },
+        { 
+          "file": "2dvs.jpg",  
+          "target": "~/images/"  
         }
       ]
     }

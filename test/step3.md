@@ -40,7 +40,7 @@ Let's apply these transformations on entire vector spaces.
 ## Scaling
 We can increase or decrease the size of area of vectors in vector spaces and thus the space covered by the vector space. This is done through scaling. Let's create a customizable linear transformation function for scaling and then plot the results.
 
-### A full customizable linear transformation for scaling
+#### A customizable linear transformation for scaling
 <pre>
 def scaling(v,h_val=1,v_val=1):
     # h_val and v_val determine the magnitude of scaling in horizontal and vertical directions respectively
@@ -50,9 +50,10 @@ def scaling(v,h_val=1,v_val=1):
 </pre>
 
 Following is the vector space we plotted in Step 1. Let's see how applying the scaling transformation changes this vector space. 
-![2D vector space](./2Dvectorspace.png)
+![2D vector space](./assets/s2dvs.png)
 
 Copy the following code to the editor:
+
 <pre class="file" data-filename="vector.py" data-target="replace">
 # Importing numpy and matplotlib
 import numpy as np
@@ -96,3 +97,11 @@ plt.title("3 times uniformally scaled vector space")
 plt.savefig('3xvs.png')
 plt.show()
 </pre>
+
+Run `vector.py` using the following command:
+
+`python3 vector.py`{{execute}} (This code doesn't produce any output on the terminal.)
+
+Click and view the newly formed `3xvs.png`{{open}} file from the VScode sidebar.
+
+We see a 3 times larger vector space which is not as dense as the original.

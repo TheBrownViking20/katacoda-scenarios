@@ -47,7 +47,7 @@ print(x_new)
 
 </pre>
 
-Run `vector.py` using the following command to get results of step 1:
+Run `vector.py` using the following command:
 
 `python3 vector.py`{{execute}}
 
@@ -71,7 +71,7 @@ print("Verified?")
 print(np.allclose(L(x+y),L(x) + L(y)))
 </pre>
 
-Run `vector.py` using the following command to get results of step 2:
+Run `vector.py` using the following command:
 
 `python3 vector.py`{{execute}}
 
@@ -92,7 +92,7 @@ print("Verified?")
 print(np.allclose(L(c*x),c*L(x)))
 </pre>
 
-Run `vector.py` using the following command to get results of step 2:
+Run `vector.py` using the following command:
 
 `python3 vector.py`{{execute}}
 
