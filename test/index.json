@@ -38,6 +38,10 @@
         { 
           "file": "lt.jpg",  
           "target": "~/images/"  
+        },
+        { 
+          "file": "slt.jpg",  
+          "target": "~/images/"  
         }
       ]
     }
