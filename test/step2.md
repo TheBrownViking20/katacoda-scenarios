@@ -40,6 +40,11 @@ def L(v):
                      [float(v[1])],
                      [float(v[0])+float(v[1])]])
 
+# Applying linear transformation L on matrix x
+x_new = L(x)
+# Print the resulting matrix
+print(x_new)
+
 </pre>
 
 Run `vector.py` using the following command to get results of step 1:
@@ -60,6 +65,7 @@ print(L(x+y))
 # RHS
 print("L(x)+L(y) =")
 print(L(x) + L(y))
+# Verifying LHS = RHS
 print("Verified?")
 # np.allclose checks if two arrays are truly identical
 print(np.allclose(L(x+y),L(x) + L(y)))
@@ -81,8 +87,9 @@ print(L(c*x))
 # RHS
 print("cL(x) =")
 print(c*L(x))
+# Verifying LHS = RHS
 print("Verified?")
-print(np.allclose(L(cx),cL(x)))
+print(np.allclose(L(c*x),c*L(x)))
 </pre>
 
 Run `vector.py` using the following command to get results of step 2:
