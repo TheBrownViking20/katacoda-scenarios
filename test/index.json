@@ -36,7 +36,7 @@
     "assets": {
       "client": [
         { 
-          "file": "d1.jpg",  
+          "file": "lt.jpg",  
           "target": "~/images/"  
         }
       ]

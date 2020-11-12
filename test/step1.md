@@ -1,7 +1,7 @@
 ## What is a vector space?
 A vector space is a set of vectors closed under finite vector addition and vector multiplication. A general example is n-dimensional space R<sup>n</sup>, where every element is represented by a list of real numbers. For a general vector space, the scalars are members of a field F, in which case V is called a vector space over F.
 
-For all elements X,Y,Z in vector space V and any scalars r,s $\epsilon$ F, following conditions must hold:
+For all elements X,Y,Z in vector space V and any scalars r,s 𝜖 F, following conditions must hold:
 * Commutativity of vector addition:
 **X + Y = Y + X**
 * Associativity of vector addition:
@@ -25,7 +25,8 @@ Since a vector space is essentially a collection of vectors that meet certain co
 Copy the following code to the editor:
 
 <pre class="file" data-filename="vector.py" data-target="replace">
-# Importing matplotlib
+# Importing numpy and matplotlib
+import numpy as np
 import matplotlib.pyplot as plt
 # Define origin or location
 # This is defined tuple of lists
@@ -61,4 +62,6 @@ Run `vector.py` using the following command to get results of step 1:
 `python3 vector.py`{{execute}} (This code doesn't produce any output on the terminal.)
 
 Click and view the newly formed `2Dvectorspace.png`{{open}} file from the VScode sidebar.
+
+The graph should depict a square as the vectors in the above vector space can't have a magnitude greater than 1.
 

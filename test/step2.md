@@ -1,3 +1,28 @@
+## Linear transformations on vector space
+Applying linear transformations on vectors or vector spaces is like applying functions on them. A linear transformation L(x) is applied on vector x results in vector y such that
+
+        **L(x) = y**
+ 
+Linear transformations should follow the following properties:
+
+        **L(x + y) = L(x) + L(y)**
+
+        **L(cx) = cL(x)** 
+ 
+where x, y 𝜖 R<sup>n</sup> and c 𝜖 R.
+
+Linear transformations can even map a vector from one vector space to another. This is represented as
+
+        **L: V → W**
+ 
+where V and W are vector spaces.
+
+For example, L(x) is a linear transformation such that
+
+![Linear Transformations](./assets/lt.jpg)
+
+Here, the linear transformations converts a 2  ×  1 vector to a 3  ×  1 vector. Let's check if L(x) satisfies both conditions.
+
 ## Identity matrix
 An identity matrix is a square matrix having ones on the main diagonal and zeros elsewhere. Following is a 3 × 3 identity matrix:
 
