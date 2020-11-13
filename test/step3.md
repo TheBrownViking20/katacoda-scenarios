@@ -67,7 +67,7 @@ e_values, e_vectors = np.linalg.eig(m)
 # Print eigenvalues and eigenvectors
 print("Eigenvalues:",e_values)
 print("Eigenvectors:")
-print(e_vectors.astype(int))
+print(e_vectors)
 </pre>
 
 Run `vector.py` using the following command:

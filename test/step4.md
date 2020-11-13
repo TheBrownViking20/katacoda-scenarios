@@ -1,77 +1,94 @@
-## Rotation
-We can rotate all vectors in a vector space through an angle  𝜃  either clockwise or counter-clockwise. Let's create a customizable linear transformation function for rotation and then plot the results. Let's create a customizable linear transformation function for scaling and then plot the results.
+## Eigendecomposition
+This is the process of factorization of a matrix into a canonical form, whereby the matrix is represented in the form of its eigenvectors and eigenvalues. Let's see the mathematical process used in finding eigenvalues and eigenvectors of a given matrix.
 
-#### A customizable linear transformation for rotation
-<pre>
-def rotation(v,clockwise=False,degree=90):
-    # Degree to radian
-    radian = np.radians(degree)
-    if clockwise==False:
-        m = np.matrix([[np.cos(radian),-np.sin(radian)],
-                  [np.sin(radian),np.cos(radian)]])
-    else:
-        m = np.matrix([[np.cos(radian),np.sin(radian)],
-                  [-np.sin(radian),np.cos(radian)]])
-    return m @ v
-</pre>
+x is an eigenvector for a matrix A if
 
-Following is the vector space we plotted in Step 1. Let's see how applying the scaling transformation changes this vector space. 
-![2D vector space](./assets/2dvs.jpg)
+**Ax=𝜆x**
+ 
+where 𝜆 is a scalar quantity.
 
-Copy the following code to the editor:
+Clearly,
+
+**Ax−𝜆x=0**
+ 
+We can add an identity matrix to 𝜆 as it doesn't change the equation. Now, we have
+
+**(A-𝜆I)x = 0**
+ 
+As we want non-trivial solutions to this equation, x can't be a zero vector. This also means that (A - 𝜆I) is not invertible. If it were invertible, then x would have to be a zero vector and we have already stated that zero vector can't be an eigenvector.
+
+As (A - 𝜆I) is not invertible, it's determinant is zero.
+
+**|A-𝜆I|=0**
+
+This is the characteristic equation and its solutions will be the eigenvalues of matrix A. For example,
+
+![Eigendecomposition 1](./assets/ed1.jpg)
+
+Therefore, the eigenvalues of matrix A are 2 and 9. Now, let's find the eigenvectors. For this, we will solve the equation (A - 𝜆I) for both eigenvalues.
+
+For 𝜆 = 2,
+
+![Eigendecomposition 2](./assets/ed2.jpg)
+
+Reducing this equation using elementary row transformation R<sub>2</sub>  →  R<sub>2</sub> - 4R<sub>1</sub>,
+
+![Eigendecomposition 3](./assets/ed3.jpg)
+
+This means,
+
+**3x<sub>1</sub> + x<sub>2</sub> = 0**
+
+Therefore,
+
+**x<sub>2</sub> = -3x<sub>1</sub>**
+
+Therefore, for 𝜆 = 2, eigenvectors are of the form x = (x1,-3x1) and its scalar multiples. (1,-3), (-1,3) and (-3,9) are some examples of these eigenvectors.
+
+For 𝜆 = 9,
+
+![Eigendecomposition 4](./assets/ed4.jpg)
+
+Reducing this equation using elementary row transformation R<sub>2</sub>  →  R<sub>2</sub> + 3R<sub>1</sub>,
+
+![Eigendecomposition 5](./assets/ed5.jpg)
+
+This means,
+
+**-4x<sub>1</sub> + x<sub>2</sub> = 0**
+
+Therefore,
+
+**x<sub>2</sub> = 4x<sub>1</sub>**
+
+Therefore, for 𝜆 = 9, eigenvectors are of the form x = (x1,4x1) and its scalar multiples. (1,4), (2,8) and (3,12) are some examples of these eigenvectors.
+
+Now, let's check this implementation's numpy equivalent for matrix A.
 
 <pre class="file" data-filename="vector.py" data-target="replace">
-# Importing numpy and matplotlib
+# Importing numpy
 import numpy as np
-import matplotlib.pyplot as plt
 
-# Create rotation function
-def rotation(v,clockwise=False,degree=90):
-    radian = np.radians(degree)
-    if clockwise==False:
-        m = np.matrix([[np.cos(radian),-np.sin(radian)],
-                  [np.sin(radian),np.cos(radian)]])
-    else:
-        m = np.matrix([[np.cos(radian),np.sin(radian)],
-                  [-np.sin(radian),np.cos(radian)]])
-    return m @ v
+m = np.matrix([[5,1],[12,6]]) # Transformation matrix for 90 degree counter-clockwise rotation
 
-# Define origin or location
-# This is defined tuple of lists
-origin = [0],[0]
+# Get eigenvalues and eigenvectors using np.linalg.eig() method
+e_values, e_vectors = np.linalg.eig(m)
 
-# Two arrays of 20 equally spaced elements
-x = np.linspace(-1,1,num=20)
-y = np.linspace(-1,1,num=20)
-
-# This nested loop creates 400 vectors in the vector space
-for i in x:
-    for j in y:
-       # Create vector 
-        vector_v = np.matrix([[float(i)],
-                              [float(j)]])
-        # Rotate it
-        rotated_v = rotation(vector_v,clockwise=True,degree=10)
-        # Transform vector for plotting
-        v = [float(rotated_v[0])],[float(rotated_v[1])]
-        # plt.quiver plots vector
-        plt.quiver(*origin, *v, color='r', units='xy', angles='xy', scale_units='xy', scale=1)
-plt.xlim(-4, 4)
-plt.ylim(-4, 4)
-plt.xlabel('X')
-plt.ylabel('Y')
-# Setting aspect ratio for the plot
-plt.gca().set_aspect('equal', adjustable='box')
-plt.title("10 degree clockwise rotation")
-# Saving image as a PNG file
-plt.savefig('rvs.png')
-plt.show()
+# Print eigenvalues and eigenvectors
+print("Eigenvalues:",e_values)
+print("Eigenvectors:")
+print(e_vectors)
 </pre>
 
 Run `vector.py` using the following command:
 
-`python3 vector.py`{{execute}} (This code doesn't produce any output on the terminal.)
+`python3 vector.py`{{execute}}
 
-Click and view the newly formed `rvs.png`{{open}} file from the VScode sidebar.
+Numpy outputs same eigenvalues as the above implementation but the eigenvectors can be difficult to understand. Instead of providing an algebraic form in the above implementation, numpy outputs a matrix of two concatenated 2 × 1 unit vectors corresponding to their eigenvalues.
 
-The resulting vector space is tilted towards right.
+We can see the second element of the first vertical vector is negative three times the first element which is the algebraic expression for 𝜆 = 2 in the above implementation i.e., x<sub>2</sub> = -3x<sub>1</sub>
+
+Similarly, the second element of the second vertical vector is four times the first element which is the algebraic expression for 𝜆 = 9 in the above implementation i.e., x<sub>2</sub> = 4x<sub>1</sub>
+
+Hence, we have verified our implementation.
+

@@ -1,76 +1,66 @@
-## Shear
-We can skew the vector space in a horizontal or vertical direction using shear based matrix transformations. For the shear element k,
+## Matrix Diagonalization
+Matrix diagonalization is a useful application of eigenvalues and eigenvectors. It involves transformation of a square matrix into a diagonal matrix that shares the same properties as the original matrix. For a matrix A, this relation can be written as
 
-![Shear](./assets/shear.jpg)
+**A = CDC<sup>-1</sup>**
+ 
+where C is a matrix composed of the eigenvectors of matrix A and D is the diagonal matrix containing corresponding eigenvalues of matrix C.
 
-#### A customizable linear transformation for shear
-<pre>
-def shear(v,horizontal=True,k=1):
-    if horizontal==True:
-        m = np.matrix([[1,k],
-                       [0,1]])
-    else:
-        m = np.matrix([[1,0],
-                       [k,1]])
-    return m @ v
-</pre>
+Given A is a 3 × 3 matrix having eigenvalues 𝜆<sub>1</sub>, 𝜆<sub>2</sub>, 𝜆<sub>3</sub>. Then, the diagonal matrix D will be
 
-Following is the vector space we plotted in Step 1. Let's see how applying the scaling transformation changes this vector space. 
-![2D vector space](./assets/2dvs.jpg)
+![Matrix Diagonalization 1](./assets/md1.jpg)
+
+Let's demonstrate diagonalization in numpy using the following matrix:
+
+![Matrix Diagonalization 2](./assets/md2.jpg)
 
 Copy the following code to the editor:
 
 <pre class="file" data-filename="vector.py" data-target="replace">
-# Importing numpy and matplotlib
+# Importing numpy
 import numpy as np
-import matplotlib.pyplot as plt
 
-# Create shear function
-def shear(v,horizontal=True,k=1):
-    if horizontal==True:
-        m = np.matrix([[1,k],
-                       [0,1]])
-    else:
-        m = np.matrix([[1,0],
-                       [k,1]])
-    return m @ v
+# Create matrix A
+A = np.matrix([[5,1],[12,6]])
 
-# Define origin or location
-# This is defined tuple of lists
-origin = [0],[0]
+# Get eigenvalues and eigenvectors using np.linalg.eig() method
+e_values, e_vectors = np.linalg.eig(A)
 
-# Two arrays of 20 equally spaced elements
-x = np.linspace(-1,1,num=20)
-y = np.linspace(-1,1,num=20)
+# Print eigenvalues and eigenvectors
+print("Eigenvalues:",e_values)
+print("Eigenvectors:")
+print(e_vectors)
 
-# This nested loop creates 400 vectors in the vector space
-for i in x:
-    for j in y:
-       # Create vector 
-        vector_v = np.matrix([[float(i)],
-                              [float(j)]])
-        # Skew it
-        shear_v = shear(vector_v,horizontal=True,k=2/4)
-        # Transform vector for plotting
-        v = [float(shear_v[0])],[float(shear_v[1])]
-        # plt.quiver plots vector
-        plt.quiver(*origin, *v, color='r', units='xy', angles='xy', scale_units='xy', scale=1)
-plt.xlim(-4, 4)
-plt.ylim(-4, 4)
-plt.xlabel('X')
-plt.ylabel('Y')
-# Setting aspect ratio for the plot
-plt.gca().set_aspect('equal', adjustable='box')
-plt.title("Horizontal Shear: k = 2/4")
-# Saving image as a PNG file
-plt.savefig('hsvs.png')
-plt.show()
+# Create a diagonal matrix from the eigenvalues
+# np.diag() creates diagonal matrix using an array to map diagonal values
+D = np.diag(e_values)
+print("Diagonal matrix D:")
+print(D)
+
+# C is the above eigenvector matrix
+C = e_vectors
+print("Matrix C:")
+print(C)
+
+
+# Get the inverse of C 
+C_inv = np.linalg.inv(C)
+print("Inverse of matrix C:")
+print(C_inv)
+
+# Matrix multiplication of C, D, and C_inv to get matrix A
+a = C @ D @ C_inv
+print("Matrix formed after applying diagonalization formula:")
+print(a)
+
+# Verify if original matrix A = C @ D @ C_inv
+print("Verified?")
+print(np.allclose(A,a))
 </pre>
 
 Run `vector.py` using the following command:
 
-`python3 vector.py`{{execute}} (This code doesn't produce any output on the terminal.)
+`python3 vector.py`{{execute}}
 
-Click and view the newly formed `hsvs.png`{{open}} file from the VScode sidebar.
+Matrix diagonalization can be used to efficiently compute the powers of a matrix. For this, we only have to compute the powers of the diagonal matrix D such that
 
-The resulting vector space is stretched horizontally.
+**A<sup>k</sup> = CD<sup>k</sup>C<sup>-1</sup>**
