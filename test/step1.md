@@ -1,4 +1,4 @@
-## Understanding eigenvalues and eigenvectors using Python
+## Eigenvalues and eigenvectors
 The word 'eigen' in German language means 'own', 'inherent' or 'characteristic'. Therefore, eigenvectors are special vectors associated with a linear system of equations and are known as its characteristic vectors or proper vectors. Each eigenvector has a corresponding eigenvalue.
 
 Eigenvectors and eigenvalues are very important in the fields mathematics and physics and are essential for stability analysis, physics of rotating bodies, small oscillations of vibrating systems, etc. and in data science for prinipal component analysis, image compression, topic modelling, etc.
