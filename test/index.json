@@ -1,6 +1,6 @@
 {
-  "title": "Exploring Vector Spaces using Python",
-  "description": "In this scenario, you will explore important concepts related to vector spaces like linear transformations, basis, linear independence, etc.",
+  "title": "Understanding eigenvalues and eigenvectors using Python",
+  "description": "In this scenario, you will learn about the widely used concepts of eigenvalues and eigenvectors using numpy and other python libraries.",
   "difficulty": "Beginner",
   "time": "15 minutes",
   "details": {
@@ -24,14 +24,6 @@
       {
         "title": "Step 5",
         "text": "step5.md"
-      },
-      {
-        "title": "Step 6",
-        "text": "step6.md"
-      },
-      {
-        "title": "Step 7",
-        "text": "step7.md"
       }
     ],
     "intro": {
@@ -44,71 +36,7 @@
     "assets": {
       "client": [
         { 
-          "file": "lt.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "slt.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "2dvs.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "shear.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "bv1.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "bv2.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "bv3.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "bv4.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "bv5.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "bv6.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "bv7.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "bv8.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "bv9.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "bv10.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "bv11.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "li1.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "li2.jpg",  
+          "file": "vse.jpg",  
           "target": "~/images/"  
         }
       ]

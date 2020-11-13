@@ -1,107 +1,77 @@
-## Some special linear transformations
-We can perform operations like rotation, scaling, skewing, etc. on vectors and vector spaces using special transformation matrices in our linear transformations. Following are the functions for such transformations containing these transformation matrices.
+### Eigenvalues and eigenvectors for a 90° counter-clockwise rotation matrix
+Now, let's see an example with a rotation matrix. For this, we will apply(multiply) the following transformation matrix to each vector:
 
-### Scaling by 2
-<pre>
-def scale_by_2(v):
-    # Transformation matrix m
-    m = np.matrix([[2,0],
-                  [0,2]])
-    # Matrix multiplication of transformation matrix m with our vector v
-    return m @ v
-</pre>
+![Transformation matrix 3](./assets/rm.jpg)
 
-### 90 degrees rotation counter-clockwise
-<pre>
-def rotate_90_cc(v):
-    # Transformation matrix is of the form
-    # [[cos(a),-cos(a)],
-    # [sin(a),cos(a)]]
-    # where a is the angle of rotation
-    m = np.matrix([[0,-1],
-                  [1,0]])
-    return m @ v
-</pre>
-
-### Horizontal shear for skewing
-<pre>
-def horizontal_shear(v):
-    m = np.matrix([[1,1],
-                  [0,1]])
-    return m @ v
-</pre>
-
-Following is a visual example of applying these transformations on a vector v = (1,1).
-
-![Special Linear Transformations](./assets/slt.jpg)
-
-Let's apply these transformations on entire vector spaces.
-
-## Scaling
-We can increase or decrease the size of area of vectors in vector spaces and thus the space covered by the vector space. This is done through scaling. Let's create a customizable linear transformation function for scaling and then plot the results.
-
-#### A customizable linear transformation for scaling
-<pre>
-def scaling(v,h_val=1,v_val=1):
-    # h_val and v_val determine the magnitude of scaling in horizontal and vertical directions respectively
-    m = np.matrix([[h_val,0],
-                  [0,v_val]])
-    return m @ v
-</pre>
-
-Following is the vector space we plotted in Step 1. Let's see how applying the scaling transformation changes this vector space. 
-![2D vector space](./assets/2dvs.jpg)
-
-Copy the following code to the editor:
+Let's see how this transformation matrix changes our vectors by plotting the transformed vectors using numpy. Copy the following code to the editor:
 
 <pre class="file" data-filename="vector.py" data-target="replace">
 # Importing numpy and matplotlib
 import numpy as np
 import matplotlib.pyplot as plt
-
-# Create scaling function
-def scaling(v,h_val=1,v_val=1):
-    # h_val and v_val determine the magnitude of scaling in horizontal and vertical directions respectively
-    m = np.matrix([[h_val,0],
-                  [0,v_val]])
-    return m @ v
-
 # Define origin or location
 # This is defined tuple of lists
 origin = [0],[0]
-
-# Two arrays of 20 equally spaced elements
-x = np.linspace(-1,1,num=20)
-y = np.linspace(-1,1,num=20)
-
-# This nested loop creates 400 vectors in the vector space
+# We need these arrays to create the 9 vectors
+x = [-1,0,1]
+y = [-1,0,1]
+colors = ["#ddb46d","#ba808e","#75a6b7","#ffe74c","#ffa058","#ff5964","#50ccbc","#35a7ff","#6bf178"] # for distinguishing vectors
+gen = 0 # counter for iterating over colors
+m = np.matrix([[0,-1],[1,0]]) # Transformation matrix for 90 degree counter-clockwise rotation
+plt.figure(figsize=(8,8))
+# This nested loop creates 9 vectors
 for i in x:
-    for j in y:
-        # Create vector 
-        vector_v = np.matrix([[float(i)],
-                              [float(j)]])
-        # Scale it
-        scaled_v = scaling(vector_v,h_val=3,v_val=3)
-        # Transform scaled vector for plotting
-        v = [float(scaled_v[0])],[float(scaled_v[1])]
-        # plt.quiver plots vector
-        plt.quiver(*origin, *v, color='r', units='xy', angles='xy', scale_units='xy', scale=1)
-plt.xlim(-4, 4)
-plt.ylim(-4, 4)
-plt.xlabel('X')
-plt.ylabel('Y')
-# Setting aspect ratio for the plot
+  for j in y:
+    # Create vector from x and y 
+    v = [float(i)],[float(j)]
+    # Rotation
+    r = m @ v 
+    r = [float(r[0])],[float(r[1])]
+    # Plot it with a unique color
+    plt.quiver(*origin, *r, color=colors[gen], units='xy', angles='xy', scale_units='xy', scale=1, 
+               label='[{},{} -> {},{}]'.format(i,j,r[0][0],r[1][0]))
+    gen = gen + 1 # Increment color index
+plt.xlim(-3, 3)
+plt.ylim(-3, 3)
+# Define aspect ratio for uniform plotting
 plt.gca().set_aspect('equal', adjustable='box')
-plt.title("3 times uniformally scaled vector space")
-# Saving image as a PNG file
-plt.savefig('3xvs.png')
+plt.legend(loc=2)
+plt.title("90 degree anti-clockwise rotation")
+plt.savefig('plot3.png')
 plt.show()
 </pre>
 
 Run `vector.py` using the following command:
 
-`python3 vector.py`{{execute}} (This code doesn't produce any output on the terminal.)
+`python3 vector.py`{{execute}}  (This code doesn't produce any output on the terminal.)
 
-Click and view the newly formed `3xvs.png`{{open}} file from the VScode sidebar.
+Click and view the newly formed `plot3.png`{{open}} file from the VScode sidebar.
 
-We see a 3 times larger vector space which is not as dense as the original.
+Compare this plot with the original plot of the vectors given below:
+
+![Vector space example](./assets/vse.jpg)
+
+In the newly-generated plot, as direction of all vectors has changed, none of them are eigenvectors.
+
+Let's verify our answer with numpy. Copy the following code to the editor:
+
+<pre class="file" data-filename="vector.py" data-target="replace">
+# Importing numpy
+import numpy as np
+
+m = np.matrix([[0,-1],[1,0]]) # Transformation matrix for 90 degree counter-clockwise rotation
+
+# Get eigenvalues and eigenvectors using np.linalg.eig() method
+e_values, e_vectors = np.linalg.eig(m)
+
+# Print eigenvalues and eigenvectors
+print("Eigenvalues:",e_values)
+print("Eigenvectors:")
+print(e_vectors.astype(int))
+</pre>
+
+Run `vector.py` using the following command:
+
+`python3 vector.py`{{execute}}
+
+Complex values for eigenvalues and eigenvectors indicate absence of any real eigenvectors.
