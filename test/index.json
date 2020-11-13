@@ -38,6 +38,46 @@
         { 
           "file": "vse.jpg",  
           "target": "~/images/"  
+        },
+        { 
+          "file": "vsm.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "hsm.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "rm.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "ed1.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "ed2.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "ed3.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "ed4.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "ed5.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "md1.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "md2.jpg",  
+          "target": "~/images/"  
         }
       ]
     }
