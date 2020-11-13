@@ -13,7 +13,7 @@ Let's demonstrate diagonalization in numpy using the following matrix:
 
 ![Matrix Diagonalization 2](./assets/md2.jpg)
 
-Copy the following code to the editor:
+Read comments for better understanding of the code. Copy the following code to the editor:
 
 <pre class="file" data-filename="vector.py" data-target="replace">
 # Importing numpy

@@ -3,23 +3,23 @@ This is the process of factorization of a matrix into a canonical form, whereby 
 
 x is an eigenvector for a matrix A if
 
-**Ax=𝜆x**
+**Ax = 𝜆x**
  
 where 𝜆 is a scalar quantity.
 
 Clearly,
 
-**Ax−𝜆x=0**
+**Ax − 𝜆x = 0**
  
 We can add an identity matrix to 𝜆 as it doesn't change the equation. Now, we have
 
-**(A-𝜆I)x = 0**
+**(A - 𝜆I)x = 0**
  
 As we want non-trivial solutions to this equation, x can't be a zero vector. This also means that (A - 𝜆I) is not invertible. If it were invertible, then x would have to be a zero vector and we have already stated that zero vector can't be an eigenvector.
 
 As (A - 𝜆I) is not invertible, it's determinant is zero.
 
-**|A-𝜆I|=0**
+**|A - 𝜆I| = 0**
 
 This is the characteristic equation and its solutions will be the eigenvalues of matrix A. For example,
 
@@ -63,7 +63,7 @@ Therefore,
 
 Therefore, for 𝜆 = 9, eigenvectors are of the form x = (x1,4x1) and its scalar multiples. (1,4), (2,8) and (3,12) are some examples of these eigenvectors.
 
-Now, let's check this implementation's numpy equivalent for matrix A.
+Now, let's check this implementation's numpy equivalent for matrix A. Copy the following code to the editor:
 
 <pre class="file" data-filename="vector.py" data-target="replace">
 # Importing numpy
