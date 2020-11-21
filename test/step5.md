@@ -12,7 +12,8 @@ Here, 𝑦̂ is the predicted value and y is the observed value. n is the number
 Let's calculate these metrics. Copy the following code to the editor:
 
 <pre class="file" data-filename="lr.py" data-target="replace">
-# Importing pandas
+# Importing numpy and pandas
+import numpy as np
 import pandas as pd
 # Reading the csv file using pandas 
 data = pd.read_csv("data/data.csv")
@@ -60,7 +61,7 @@ Residuals are used in various performance metrics and can be used to visualize m
 Let's plot a residual plot. Copy the following code to the editor:
 
 <pre class="file" data-filename="lr.py" data-target="replace">
-# Importing numpy, pandas and matplotlib
+# Importing pandas and matplotlib
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
