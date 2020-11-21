@@ -7,7 +7,7 @@ Let's train our model. Copy the following code to the editor:
 # Importing pandas
 import pandas as pd
 # Reading the csv file using pandas 
-data = pd.read_csv("data.csv")
+data = pd.read_csv("data/data.csv")
 
 # Extracting dependent and independent variables
 X = data.drop(["Target"],axis=1)

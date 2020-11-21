@@ -37,7 +37,7 @@
       "client": [
         { 
           "file": "data.csv",  
-          "target": "~/"  
+          "target": "~/data/"  
         },
         { 
           "file": "n1.jpg",  

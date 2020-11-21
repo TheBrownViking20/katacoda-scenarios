@@ -24,7 +24,7 @@ First, we will read the data from the CSV file using pandas and then preview it.
 # Importing pandas
 import pandas as pd
 # Reading the csv file using pandas 
-data = pd.read_csv("data.csv")
+data = pd.read_csv("data/data.csv")
 # Showing first five rows of the dataset
 print(data.head())
 </pre>
@@ -43,7 +43,7 @@ Now, let's divide the data into dependent and independent variables. Copy the fo
 # Importing pandas
 import pandas as pd
 # Reading the csv file using pandas 
-data = pd.read_csv("data.csv")
+data = pd.read_csv("data/data.csv")
 
 # Printing shape of data
 print("Shape of data:", data.shape)
