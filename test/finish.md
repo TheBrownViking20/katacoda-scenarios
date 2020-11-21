@@ -1,4 +1,7 @@
 Well done! You have successfully completed the tutorial.
 
+**Conclusion:** The baseline model that includes all eligible variables is not a good fit. More data and better feature selection strategy might improve the model performance.
+
 ### Learning outcomes
-* Learn the concepts behind algorithms like PCA, Page Rank algorithm, Spectral clustering, etc.
+* Loading and transforming data for regression
+* Training and evaluating a basic linear regression model

@@ -1,13 +1,15 @@
-# <p align="center">Fundamental Linear Algebra using Python</p>
+# <p align="center">Linear Regression with Python</p>
 
-## What is Linear Algebra?
-Linear Algebra is the branch of mathematics that deals with vector spaces and matrices. It is the mathematics of data, dealing with its creation, representation, transformation, and consumption using various concepts of vectors and matrices.
+## Linear Regression using Scikit-Learn
 
-## Why you should study Linear Algebra?
-In the world of data science, data is not only represented in the form of vectors and matrices but is also researched and transformed using various concepts of linear algebra. This makes it essential to know the concepts of linear algebra to better understand the inner workings of various machine learning models and algorithms. 
+In this scenario, you will learn how to use linear regression to solve various business problems. We will be using various python libraries for this tutorial. We will use pandas for data loading and data manipulation, matplotlib for data visualization, and scikit-learn for data preprocessing and modeling.
 
-### What will you learn in this scenario?
-This scenario is a part of a five-part set of katacoda scenarios. These scenarios aim to teach Linear Algebra with special emphasis on coding examples and good visualization practices. This is achieved using Python and its libraries like Numpy, Matlplotlib, etc. In this scenario, you will learn the following:
-* Eigenvalues and eigenvectors
-* Eigendecomposition
-* Matrix diagonalization
+### What is Linear Regression?
+Linear regression attempts to find a relationship between a dependent variable and one or more explanatory (or independent) variables. Linear regression can be used for various tasks. For example, a given dataset has data about locations of houses in a state/province, their prices, their architecture, their neighborhood, etc. This dataset can be used to estimate the prices of houses (which may not have been listed yet) in that particular state. This is useful for house owners, potential buyers, and real estate agencies.
+
+Other uses of regression are:
+* Stock price prediction
+* Weather forecasting
+* Predictive analysis from survey data
+* Market research studies
+* Future sales prediction and much more

@@ -1,6 +1,6 @@
 {
-  "title": "Understanding eigenvalues and eigenvectors using Python",
-  "description": "In this scenario, you will learn about the widely used concepts of eigenvalues and eigenvectors using numpy and other python libraries.",
+  "title": "Linear Regression Using Scikit-Learn",
+  "description": "In this scenario, you will learn how to use linear regression to solve various business problems",
   "difficulty": "Beginner",
   "time": "15 minutes",
   "details": {
@@ -36,47 +36,31 @@
     "assets": {
       "client": [
         { 
-          "file": "vse.jpg",  
+          "file": "data.csv",  
+          "target": "~/"  
+        },
+        { 
+          "file": "n1.jpg",  
           "target": "~/images/"  
         },
         { 
-          "file": "vsm.jpg",  
+          "file": "n2.jpg",  
           "target": "~/images/"  
         },
         { 
-          "file": "hsm.jpg",  
+          "file": "n3.jpg",  
           "target": "~/images/"  
         },
         { 
-          "file": "rm.jpg",  
+          "file": "n4.jpg",  
           "target": "~/images/"  
         },
         { 
-          "file": "ed1.jpg",  
+          "file": "n5.jpg",  
           "target": "~/images/"  
         },
         { 
-          "file": "ed2.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "ed3.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "ed4.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "ed5.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "md1.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "md2.jpg",  
+          "file": "n6.jpg",  
           "target": "~/images/"  
         }
       ]
