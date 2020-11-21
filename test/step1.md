@@ -33,7 +33,7 @@ Run `lr.py` using the following command:
 
 `python3 lr.py`{{execute}}
 
-The above code should output the first five rows of the dataset as a preview. Following is a better view of this preview:
+The above code should output the first five rows of the dataset as a preview. Following is a neater view of this preview:
 
 ![n3](./assets/n3.jpg)
 

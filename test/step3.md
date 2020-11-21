@@ -28,7 +28,7 @@ model = LinearRegression()
 model.fit(X_train,y_train)
 
 # Printing intercept
-print("Intercept:"model.intercept_)
+print("Intercept:",model.intercept_)
 
 # Printing coefficients for the given features using a pandas dataframe
 model_coefs = pd.DataFrame({'Feature/Column': list(X.columns), 'Coefficient': model.coef_})

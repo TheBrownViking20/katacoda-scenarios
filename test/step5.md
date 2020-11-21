@@ -60,7 +60,8 @@ Residuals are used in various performance metrics and can be used to visualize m
 Let's plot a residual plot. Copy the following code to the editor:
 
 <pre class="file" data-filename="lr.py" data-target="replace">
-# Importing pandas and matplotlib
+# Importing numpy, pandas and matplotlib
+import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 # Reading the csv file using pandas 
