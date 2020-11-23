@@ -3,7 +3,26 @@ In this method, we estimate the mutual information for a continuous target varia
 
 We will use `mutual_info_regression()` method to apply mutual information method. Append the following code to the editor:
 
-<pre class="file" data-filename="lr.py" data-target="append">
+<pre class="file" data-filename="lr.py" data-target="replace">
+# Importing numpy and pandas
+import numpy as np
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+# Reading the csv file using pandas 
+data = pd.read_csv("data/data.csv")
+
+# Extracting dependent and independent variables
+X = data.drop(["Target"],axis=1)
+y = data["Target"]
+
+# Importing splitting method from Scikit-learn
+from sklearn.model_selection import train_test_split
+# Splitting
+X_train, X_test, y_train, y_test = train_test_split(X, y,
+                                                    test_size=0.3,
+                                                    random_state=100,
+                                                    shuffle=True)
+
 from sklearn.feature_selection import mutual_info_regression
 
 # Feature selection using SelectKBest

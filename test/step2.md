@@ -12,9 +12,28 @@ If k=4 is selected,
 
 We will use k-fold cross-validation with 3 folds as then the training set size will be 66% which is closest to the 70% training set size of the original model. Scikit-learn provides `cross_val_score()` method for k-fold cross validation which accepts the model object, dependent and indpendent variables, number of folds, and the scoring metric. This returns a list of each fold's calculated scoring metric. We will perform cross-validation for both R-squared score and RMSE. Append the following code to the editor:
 
-<pre class="file" data-filename="lr.py" data-target="append">
+<pre class="file" data-filename="lr.py" data-target="replace">
+# Importing numpy and pandas
+import numpy as np
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+# Reading the csv file using pandas 
+data = pd.read_csv("data/data.csv")
+
+# Extracting dependent and independent variables
+X = data.drop(["Target"],axis=1)
+y = data["Target"]
+
+# Importing splitting method from Scikit-learn
+from sklearn.model_selection import train_test_split
+# Splitting
+X_train, X_test, y_train, y_test = train_test_split(X, y,
+                                                    test_size=0.3,
+                                                    random_state=100,
+                                                    shuffle=True)
+
 # Importing cross-validation method from scikit-learn
-from sklean.model_selection import cross_val_score
+from sklearn.model_selection import cross_val_score
 
 # 3-Fold cross-validation scored using R^2 score
 r2_cross_val = cross_val_score(LinearRegression(),X,y,cv=3,scoring="r2")
