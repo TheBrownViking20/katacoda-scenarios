@@ -1,8 +1,6 @@
 Well done! You have successfully completed the tutorial.
 
-**Conclusion:** We have successfully used cross-validation to estimate model performance. We have also used and compared various feature selection techniques.
+**Conclusion:** We have seen the effect of polynomial features on final results. We can increase the degree of polynomial features for more features though we already have a near perfect model.
 
 ### Learning outcomes
-* Create and validate multiple linear regression models 
-* Select important features experimentally and intuitively
-
+* Build your own polynomial regression models

@@ -1,20 +1,17 @@
-### What is multiple linear regression?
-Multiple linear regression attempts to find a relationship between a dependent variable and more than one explanatory (or independent) variables.
+### What is polynomial regression?
+Polynomial regression is used to fit nonlinear data using linear models. This enables inclusion of nonlinear trends which are not captured by a linear approach. This is done by transforming existing data into its higher order terms. Eg., Some new features will be 2nd or 3rd powers of old features.
 
-For multiple linear regression, we have two or more explanatory variables. It is described as a general equation as shown below:
-
-![n2](./assets/n2.jpg)
-
-where y is the dependent variable, x<sub>1</sub>...x<sub>p</sub> are the explanatory variables with regression coefficients b<sub>1</sub>...b<sub>p</sub>, and b<sub>0</sub> is the intercept with the error term 𝜖.
+### Feature Engineering
+Feature engineering is the process of creating new features from raw using domain knowledge via data mining techniques. These features can improve the performance of machine learning algorithms. Creating polynomial features for our task so we have more features to train our models on is an example of feature engineering.
 
 ### About the dataset
 This is a simulated dataset made for teaching regression containing 10 independent variables named `Feat01`, `Feat02`..., `Feat10` and a dependent variable called `Target`. The dataset is stored in a CSV file called `data.csv`.
 
 ### The task
-The task at hand is to predict the **Target** variable such that the values of predictions are as close to the actual values as possible. This will be done using a multiple linear regression model.
+The task at hand is to predict the **Target** variable such that the values of predictions are as close to the actual values as possible. This will be done using a multiple linear regression model with polynomial features.
 
 ### A basic multiple linear regression model
-As learnt in the previous scenario, we will train a multiple linear regression model using all available features. Copy the following code to the editor: 
+As learnt in the previous scenarios, first we will train a multiple linear regression model using all available features. Copy the following code to the editor: 
 
 <pre class="file" data-filename="lr.py" data-target="replace">
 # Importing numpy and pandas
@@ -57,4 +54,4 @@ Run `lr.py` using the following command:
 
 The above code loads the data, prepares it, trains a model with all available features, takes predictions, and finally evaluates the model.
 
-Although in some cases, training a model with all available columns (features) in the dataset can lead to the best results, this approach is not intuitive and can lead to complications in the future. The model may not be able to capture all the information required and in the case of very large datasets can lead to very long training times even when all the available features are not important. To avoid these hurdles, methods like cross-validation and feature selection are used.
+Including polynomial features in our model can increase the efficiency of our model as now we have more information about our data. Now, our linear model will be able to utilise non-linear trends in our data to provide better results.

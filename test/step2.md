@@ -1,22 +1,10 @@
-### Cross-validation
-How can we be sure that this model gives at least similar performance on other data samples with same parameters using different training samples? As a data scientist, we must ensure that our model gives similar performance for any data sample, seen or unseen before. Therefore, to estimate the skill of our machine learning models, we use cross validation. Cross-validation is a resampling procedure where we measure the performance of our model by training and testing it on different data samples from the available data. A good model's performance will remain similar no matter what data sample is used.
-
-### k-Fold Cross-validation
-We will be using k-Fold cross-validation for estimating our model's performance. In k-Fold cross-validation, data is divided into `k` sets. It is trained `k` times taking a different set of k-1 sets for training and testing on the 1 remaining set. `k` should be selected keeping in mind the size of the available dataset.
-
-If k=4 is selected,
-1. Iteration 1 - Training on (Fold 1, Fold 2, Fold 3), Testing on Fold 4
-2. Iteration 2 - Training on (Fold 2, Fold 3, Fold 4), Testing on Fold 1
-3. Iteration 3 - Training on (Fold 3, Fold 4, Fold 1), Testing on Fold 2
-4. Iteration 4 - Training on (Fold 4, Fold 1, Fold 2), Testing on Fold 3
-
-We will use k-fold cross-validation with 3 folds as then the training set size will be 66% which is closest to the 70% training set size of the original model. Scikit-learn provides `cross_val_score()` method for k-fold cross validation which accepts the model object, dependent and indpendent variables, number of folds, and the scoring metric. This returns a list of each fold's calculated scoring metric. We will perform cross-validation for both R-squared score and RMSE. Append the following code to the editor:
+### Creating polynomial features
+We will start with a Polynomial Regression model with 2nd degree polynomial features. We will use Scikit-learn's `PolynomialFeatures` class object to create polynomial features. Copy the following code to the editor: 
 
 <pre class="file" data-filename="lr.py" data-target="replace">
 # Importing numpy and pandas
 import numpy as np
 import pandas as pd
-from sklearn.linear_model import LinearRegression
 # Reading the csv file using pandas 
 data = pd.read_csv("data/data.csv")
 
@@ -24,24 +12,32 @@ data = pd.read_csv("data/data.csv")
 X = data.drop(["Target"],axis=1)
 y = data["Target"]
 
-# Importing splitting method from Scikit-learn
-from sklearn.model_selection import train_test_split
-# Splitting
-X_train, X_test, y_train, y_test = train_test_split(X, y,
-                                                    test_size=0.3,
-                                                    random_state=100,
-                                                    shuffle=True)
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import LinearRegression
 
-# Importing cross-validation method from scikit-learn
+# Creating polynomial features
+poly = PolynomialFeatures(2) # 2 means features of 2nd power
+X_poly2 = poly.fit_transform(X)
+
+print("The number of features has increased from {} to {} with the inclusion of 2nd degree polynomial features.".format(X.shape[1],X_poly2.shape[1]))
+</pre>
+
+Run `lr.py` using the following command:
+
+`python3 lr.py`{{execute}}
+
+
+Let's estimate the results of polynomial regression of 2nd degree using k-fold cross-validation. We will use R-squared error and RMSE as scoring metrics. Append the following code to the editor: 
+
+<pre class="file" data-filename="lr.py" data-target="append">
 from sklearn.model_selection import cross_val_score
 
-# 3-Fold cross-validation scored using R^2 score
-r2_cross_val = cross_val_score(LinearRegression(),X,y,cv=3,scoring="r2")
-# Printing scoring metric for each fold and mean of scoring metrics
+print("Cross-validation based on all polynomial features:")
+
+r2_cross_val = cross_val_score(LinearRegression(),X_poly2,y,cv=3,scoring="r2")
 print("The 3-fold CV R^2 scores are {} \nwith a mean R^2 score of {:.4f}".format(r2_cross_val,np.mean(r2_cross_val)))
 
-# 3-Fold cross-validation scored using RMSE
-rmse_cross_val = cross_val_score(LinearRegression(),X,y,cv=3,scoring="neg_root_mean_squared_error")
+rmse_cross_val = cross_val_score(LinearRegression(),X_poly2,y,cv=3,scoring="neg_root_mean_squared_error")
 print("The 3-fold CV RMSE scores are {} \nwith a mean RMSE of {:.4f}".format([-i for i in rmse_cross_val],-np.mean(rmse_cross_val)))
 </pre>
 
@@ -49,5 +45,4 @@ Run `lr.py` using the following command:
 
 `python3 lr.py`{{execute}}
 
-We can see that the performance of our model on all 3 folds is very similar to that on the original 70/30 split shown above, although RMSE for each fold is more than our original model. We might be overfitting with the baseline model.
-
+As seen in the output of the above code, the R^2 score has increased significantly. RMSE is now less than half of the original model. Hence, due to polynomial features, we have a much better model now. Let's take the top 25 features for a more lightweight model. We will use F-value based feature selection we learned in the previous scenarios for this.
