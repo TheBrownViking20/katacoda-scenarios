@@ -1,46 +1,69 @@
-### Training a linear regression model
-We will train a linear regression model using all ten available features. The `fit()` method of the `LinearRegression` class trains models and estimates the best possible intercept and coefficient(s).
+### Feature Selection
+We have simply trained our model on all given features. It should be noted that not all these features will be useful for your model or be able to explain significant variability. Some features may also negatively affect the model performance. To tackle this, feature selection methods are used. Using these methods, we can find out the most relevant features and discard the useless features. As a result, we get a lightweight model with similar or better performance.
 
-Let's train our model. Copy the following code to the editor:
+#### Select K Best
+In this method, we get top K features from our dataset. Features are evaluated using a score function passed to the `SelectKBest` class object. 
 
-<pre class="file" data-filename="lr.py" data-target="replace">
-# Importing pandas
-import pandas as pd
-# Reading the csv file using pandas 
-data = pd.read_csv("data/data.csv")
+#### F-Value Method
+In this method, univariate linear regression tests are performed. Linear models are used for testing the individual effect of each of many regressors(independent variables.).
 
-# Extracting dependent and independent variables
-X = data.drop(["Target"],axis=1)
-y = data["Target"]
+This is done in 2 steps:
 
-# Importing splitting method from Scikit-learn
-from sklearn.model_selection import train_test_split
-# Splitting
-X_train, X_test, y_train, y_test = train_test_split(X, y,
-                                                    test_size=0.3,
-                                                    random_state=100,
-                                                    shuffle=True)
+1. The correlation between each regressor and the target is computed.
 
-# Fitting a linear model
-from sklearn.linear_model import LinearRegression
-model = LinearRegression()
-# Training our model
-model.fit(X_train,y_train)
+2. It is converted to an F-score then to a p-value.
 
-# Printing intercept
-print("Intercept:",model.intercept_)
+F-statistic is the value that you get when you run an ANOVA test or a regression analysis to find out if the means between two populations are significantly different. F-test tells if given variables are jointly significant. 
 
-# Printing coefficients for the given features using a pandas dataframe
-model_coefs = pd.DataFrame({'Feature/Column': list(X.columns), 'Coefficient': model.coef_})
-print(model_coefs)
+F-value is the ratio of variance of the group means (Mean Square Between) and mean of the group variances (Mean Squared Error)
+
+If F-value is more than F-statistic, you can reject the null hypothesis. F-values and their resulting p-values are used to score independent variables. We will use the `f_regression()` method with a `SelectKBest` class object to apply F-value method to our data. Append the following code to the editor:
+
+<pre class="file" data-filename="lr.py" data-target="append">
+import matplotlib.pyplot as plt
+from sklearn.feature_selection import f_regression, SelectKBest
+
+# Feature selection using SelectKBest
+# Fit a model using F-value(f_regression) method 
+skb = SelectKBest(f_regression).fit(X, y)
+
+# DataFrame of variables w/ corresponding scores
+skb_df = pd.DataFrame({"Feature/Column": list(X_train.columns),"Scores":skb.scores_}) 
+
+# Plot a bar plot of scores
+skb_df.sort_values("Scores",ascending=False).set_index("Feature/Column").plot(kind="bar")
+plt.title("F-value based Feature Selection scores")
+# Saving plot as a PNG file
+plt.savefig("Plot1.png")
+plt.show()
+</pre>
+
+Run `lr.py` using the following command:
+
+`python3 lr.py`{{execute}} (This code doesn't produce any output on the terminal.)
+
+Click and view the newly formed `Plot1.png`{{open}} file from the VScode sidebar.
+
+Only 5 features(most prominently `Feat10`) have been deemed significant by this method. Let's estimate the model performance with only the five best variables using cross-validation. Append the following code to the editor:
+
+<pre class="file" data-filename="lr.py" data-target="append">
+print("3-Fold cross-validation with 5 features")
+
+# 3-Fold cross-validation scored using R^2 score
+r2_cross_val = cross_val_score(LinearRegression(),X[["Feat10","Feat06","Feat03","Feat04","Feat05"]],y,cv=3,scoring="r2")
+print("The 3-fold CV R^2 scores are {} \nwith a mean R^2 score of {:.4f}".format(r2_cross_val,np.mean(r2_cross_val)))
+
+# 3-Fold cross-validation scored using RMSE
+rmse_cross_val = cross_val_score(LinearRegression(),X[["Feat10","Feat06","Feat03","Feat04","Feat05"]],y,cv=3,scoring="neg_root_mean_squared_error")
+print("The 3-fold CV RMSE scores are {} \nwith a mean RMSE of {:.4f}".format([-i for i in rmse_cross_val],-np.mean(rmse_cross_val)))
 </pre>
 
 Run `lr.py` using the following command:
 
 `python3 lr.py`{{execute}}
 
-The above code prints the intercept and a table of feature names with their respective coefficients calculated by the model. Below is a neater view of the table.
+Our model loses negligible performance but the new model is lightweight and less likely to overfit. Following plot shows the effect on performance of the model with each new feature addition:
 
-![n4](./assets/n4.jpg)
+![l1](./assets/l1.jpg)
 
-Looking at the value of coefficients, we can say that for this model, the feature `Feat02` is not a good predictor due to its very low value and can be removed without affecting the results.
+Looking at the trend, it is advised to use 5-6 top features for the best possible performance.

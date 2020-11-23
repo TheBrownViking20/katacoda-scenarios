@@ -1,7 +1,8 @@
 Well done! You have successfully completed the tutorial.
 
-**Conclusion:** The baseline model that includes all eligible variables is not a good fit. More data and better feature selection strategy might improve the model performance.
+**Conclusion:** We have successfully used cross-validation to estimate model performance. We have also used and compared various feature selection techniques.
 
 ### Learning outcomes
-* Loading and transforming data for regression
-* Training and evaluating a basic linear regression model
+* Create and validate multiple linear regression models 
+* Select important features experimentally and intuitively
+

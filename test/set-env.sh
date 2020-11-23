@@ -1,2 +1,2 @@
-pip3 install -U scikit-learn pandas matplotlib statsmodels
+pip3 install -U scikit-learn pandas matplotlib
 clear

@@ -1,6 +1,6 @@
 {
-  "title": "Linear Regression Using Scikit-Learn",
-  "description": "In this scenario, you will learn how to use linear regression to solve various business problems",
+  "title": "Multiple Linear Regression Using Python",
+  "description": "In this scenario, you will learn how to perform multiple linear regression effectively using cross-validation and feature selection",
   "difficulty": "Beginner",
   "time": "15 minutes",
   "details": {
@@ -40,27 +40,15 @@
           "target": "~/data/"  
         },
         { 
-          "file": "n1.jpg",  
-          "target": "~/images/"  
-        },
-        { 
           "file": "n2.jpg",  
           "target": "~/images/"  
         },
         { 
-          "file": "n3.jpg",  
+          "file": "l1.jpg",  
           "target": "~/images/"  
         },
         { 
-          "file": "n4.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "n5.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "n6.jpg",  
+          "file": "l2.jpg",  
           "target": "~/images/"  
         }
       ]
