@@ -1,8 +1,11 @@
-### What is polynomial regression?
-Polynomial regression is used to fit nonlinear data using linear models. This enables inclusion of nonlinear trends which are not captured by a linear approach. This is done by transforming existing data into its higher order terms. Eg., Some new features will be 2nd or 3rd powers of old features.
+### What Is Regularization?
+Regularization is a kind of regression that shrinks the coefficient estimates towards zero. This technique discourages formation of a complex model, so as to avoid risk of overfitting.
 
-### Feature Engineering
-Feature engineering is the process of creating new features from raw using domain knowledge via data mining techniques. These features can improve the performance of machine learning algorithms. Creating polynomial features for our task so we have more features to train our models on is an example of feature engineering.
+#### Underfitting and Overfitting
+* Underfitting occurs when a model is not able to capture the underlying trend of the data.
+* Overfitting occurs when a model follows the trend of training data very closely but is not able to replicate the same performance on testing data.
+
+A good fit model generalizes well and neither underfits nor overfits.
 
 ### About the dataset
 This is a simulated dataset made for teaching regression containing 10 independent variables named `Feat01`, `Feat02`..., `Feat10` and a dependent variable called `Target`. The dataset is stored in a CSV file called `data.csv`.
@@ -11,7 +14,7 @@ This is a simulated dataset made for teaching regression containing 10 independe
 The task at hand is to predict the **Target** variable such that the values of predictions are as close to the actual values as possible. This will be done using a multiple linear regression model with polynomial features.
 
 ### A basic multiple linear regression model
-As learnt in the previous scenarios, first we will train a multiple linear regression model using all available features. Copy the following code to the editor: 
+As learnt in the previous scenarios, first we will train a multiple linear regression model using all available features before performing regularization. We will compare our regularization results with this model. Copy the following code to the editor: 
 
 <pre class="file" data-filename="lr.py" data-target="replace">
 # Importing numpy and pandas
@@ -46,6 +49,15 @@ from sklearn.metrics import r2_score, mean_squared_error
 # Calculating metrics
 print("The R-squared score is {:.4f}".format(r2_score(y_test,y_pred)))
 print("The Root Mean Squared error is {:.4f}".format(np.sqrt(mean_squared_error(y_test,y_pred))))
+print("_____________________")
+
+# Performing cross-validation
+from sklearn.model_selection import cross_val_score
+r2_cross_val = cross_val_score(LinearRegression(),X,y,cv=3,scoring="r2")
+print("The 3-fold CV R^2 scores are {} \nwith a mean R^2 score of {:.4f}".format(r2_cross_val,np.mean(r2_cross_val)))
+rmse_cross_val = cross_val_score(LinearRegression(),X,y,cv=3,scoring="neg_root_mean_squared_error")
+print("The 3-fold CV RMSE scores are {} \nwith a mean RMSE of {:.4f}".format([-i for i in rmse_cross_val],-np.mean(rmse_cross_val)))
+print("_____________________")
 </pre>
 
 Run `lr.py` using the following command:
@@ -54,4 +66,4 @@ Run `lr.py` using the following command:
 
 The above code loads the data, prepares it, trains a model with all available features, takes predictions, and finally evaluates the model.
 
-Including polynomial features in our model can increase the efficiency of our model as now we have more information about our data. Now, our linear model will be able to utilise non-linear trends in our data to provide better results.
+We do have a trained model now but it might be overfitting. It's time to perform regularization. Here, we will perform L1 and L2 regularization.

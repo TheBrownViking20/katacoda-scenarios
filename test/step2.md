@@ -1,5 +1,11 @@
-### Creating polynomial features
-We will start with a Polynomial Regression model with 2nd degree polynomial features. We will use Scikit-learn's `PolynomialFeatures` class object to create polynomial features. Copy the following code to the editor: 
+### Ridge Regression
+Ridge regression or **L2 regularization** brings values of coefficients near zero to enforce regularization.
+
+Penalty is described by 𝜆 parameter. More the value of 𝜆, lesser the flexibility. For low values of 𝜆, the coefficients are very similar to that of a multiple linear regression model. As 𝜆 increases, the differences between the results of Ridge model and linear regression model increase.
+
+Following is a demonstration where we use increasing values of 𝜆 iteratively to show the effect of Ridge Regression.
+
+First, we will train a multiple linear regression model to acquire its coefficients. Copy the following code to the editor:
 
 <pre class="file" data-filename="lr.py" data-target="replace">
 # Importing numpy and pandas
@@ -12,37 +18,57 @@ data = pd.read_csv("data/data.csv")
 X = data.drop(["Target"],axis=1)
 y = data["Target"]
 
-from sklearn.preprocessing import PolynomialFeatures
+# Importing splitting method from Scikit-learn
+from sklearn.model_selection import train_test_split
+# Splitting
+X_train, X_test, y_train, y_test = train_test_split(X, y,
+                                                    test_size=0.3,
+                                                    random_state=100,
+                                                    shuffle=True)
+
+# Fitting a linear model
 from sklearn.linear_model import LinearRegression
+model = LinearRegression()
+# Training our model
+model.fit(X_train,y_train)
 
-# Creating polynomial features
-poly = PolynomialFeatures(2) # 2 means features of 2nd power
-X_poly2 = poly.fit_transform(X)
-
-print("The number of features has increased from {} to {} with the inclusion of 2nd degree polynomial features.".format(X.shape[1],X_poly2.shape[1]))
+# The coefficients for each columns as a table
+model_coefs = pd.DataFrame({'Feature/Column':list(X_train.columns),"Coef_linear":model.coef_})
+print(model_coefs)
+print("_____________________")
 </pre>
 
 Run `lr.py` using the following command:
 
 `python3 lr.py`{{execute}}
 
-
-Let's estimate the results of polynomial regression of 2nd degree using k-fold cross-validation. We will use R-squared error and RMSE as scoring metrics. Append the following code to the editor: 
+Now, let's train Ridge regression models for increasing values of 𝜆 parameter. To peform L2 regularization, we will use a `Ridge` class object. Append the following code to the editor:
 
 <pre class="file" data-filename="lr.py" data-target="append">
-from sklearn.model_selection import cross_val_score
+# Ridge() for L2 regularization
+from sklearn.linear_model import Ridge
 
-print("Cross-validation based on all polynomial features:")
+alpha_values = [0.0001,0.001,0.01,0.1,1] # Different values for 𝜆 parameter
+for i in alpha_values:
+    # Fitting a ridge regression model
+    ridge = Ridge(alpha=i)
+    ridge.fit(X_train,y_train)
 
-r2_cross_val = cross_val_score(LinearRegression(),X_poly2,y,cv=3,scoring="r2")
-print("The 3-fold CV R^2 scores are {} \nwith a mean R^2 score of {:.4f}".format(r2_cross_val,np.mean(r2_cross_val)))
+    # Adding to the table of coefficients
+    model_coefs["Coef_ridge_alpha{}".format(i)] = ridge.coef_
+    
+    # Getting perdictions
+    y_pred_new = ridge.predict(X_test)
 
-rmse_cross_val = cross_val_score(LinearRegression(),X_poly2,y,cv=3,scoring="neg_root_mean_squared_error")
-print("The 3-fold CV RMSE scores are {} \nwith a mean RMSE of {:.4f}".format([-i for i in rmse_cross_val],-np.mean(rmse_cross_val)))
+    # Evaluation
+    print("At alpha = {}".format(i))
+    print("The R-squared score is {:.4f}".format(r2_score(y_test,y_pred_new)))
+    print("The Root Mean Squared error is {:.4f}".format(np.sqrt(mean_squared_error(y_test,y_pred_new))))
+    print("__________")
 </pre>
 
 Run `lr.py` using the following command:
 
 `python3 lr.py`{{execute}}
 
-As seen in the output of the above code, the R^2 score has increased significantly. RMSE is now less than half of the original model. Hence, due to polynomial features, we have a much better model now. Let's take the top 25 features for a more lightweight model. We will use F-value based feature selection we learned in the previous scenarios for this.
+All these models score less than the linear model but are less likely to overfit. Let's compare their coefficients with the linear model using the table of coefficients.

@@ -1,32 +1,34 @@
-### Model Evaluation
-
-**Residuals** are prediction errors i.e., difference between the observed value and the predicted value.
-
-Residuals are used in various performance metrics and can be used to visualize model performance. A resdiuals plot shows residuals on the vertical axis and predicted values on the horizontal axis. In a ideal residuals plot, the distribution of residuals around the target is random and uniformly centered around zero. A good model leads to constant variability in the residuals plot.
-
-Let's compare residual plots for our multiple linear regression model and polynomial regression model. Append the following code to the editor:
+### Evaluating lasso regression
+Let's print out the table of coefficients. Append the following code to the editor:
 
 <pre class="file" data-filename="lr.py" data-target="append">
-# Residuals plot
-plt.figure(figsize=(15,4))
-
-plt.scatter(y_pred,y_test-y_pred,color="red", label="Multiple Linear Regression")
-plt.scatter(poly_pred,y_test-poly_pred,color="blue", label="2nd Degree Polynomial Regression")
-
-plt.title("Residuals plot")
-plt.legend()
-plt.xlabel("Predicted value")
-plt.ylabel("Residuals")
-
-# Saving plot as a PNG file
-plt.savefig("Plot3.png")
-plt.show()
+lasso_alpha_comparison = model_coefs.set_index("Feature/Column").apply(lambda x: np.abs(x),axis=1)
+print(lasso_alpha_comparison)
 </pre>
 
 Run `lr.py` using the following command:
 
-`python3 lr.py`{{execute}} (This code doesn't produce any new output on the terminal.)
+`python3 lr.py`{{execute}}
 
-Click and view the newly formed `Plot3.png`{{open}} file from the VScode sidebar.
+Following is a heatmap summarising this table:
 
-The residuals plot of polynomial regression has all positive values and the residuals are much closer to zero as compared to the residuals plot of multiple linear regression. The polynomial regression model has performed much better.
+![l1hmp](./assets/l1hmp.jpg)
+
+In order to reduce the coefficient of strong regressor `Feat10`, the coefficients of other regressors have actually increased. We can choose the penalty where 𝜆 = 0.1. At 𝜆 = 0.01, the coefficient of `Feat07` becomes 0 indicating a weak regressor. At 𝜆 = 1.0, the coefficient of Feat01 being 0 also indicates a weak regressor.
+
+Let's cross-validate our model at 𝜆 = 0.1. Append the following code to the editor:
+
+<pre class="file" data-filename="lr.py" data-target="append">
+from sklearn.model_selection import cross_val_score
+
+r2_cross_val = cross_val_score(Lasso(alpha=0.1),X,y,cv=3,scoring="r2")
+print("At alpha = 0.1 , the 3-fold CV R^2 scores are {} \nwith a mean R^2 score of {:.4f}".format(r2_cross_val,np.mean(r2_cross_val)))
+rmse_cross_val = cross_val_score(Lasso(alpha=0.1),X,y,cv=3,scoring="neg_root_mean_squared_error")
+print("At alpha = 0.1 , the 3-fold CV RMSE scores are {} \nwith a mean RMSE of {:.4f}".format([-i for i in rmse_cross_val],-np.mean(rmse_cross_val)))
+</pre>
+
+Run `lr.py` using the following command:
+
+`python3 lr.py`{{execute}}
+
+At 𝜆 = 0.1, we have sacrificed negligible performance but the model is less likely to overfit.

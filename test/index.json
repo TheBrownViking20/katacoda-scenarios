@@ -1,6 +1,6 @@
 {
-  "title": "Polynomial Regression Using Python",
-  "description": "In this scenario, you will learn how to perform polynomial regression effectively",
+  "title": "Regularization in Regression Using Python",
+  "description": "In this scenario, you will learn how to use regularization in linear regression models effectively",
   "difficulty": "Beginner",
   "time": "15 minutes",
   "details": {
@@ -40,7 +40,11 @@
           "target": "~/data/"  
         },
         { 
-          "file": "q1.jpg",  
+          "file": "l1hmp.jpg",  
+          "target": "~/images/"  
+        },
+        { 
+          "file": "l2hmp.jpg",  
           "target": "~/images/"  
         }
       ]
