@@ -36,7 +36,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y,
                                                     random_state=100,
                                                     shuffle=True)
 
-# We have to create this equation using numpy methods and operations: (𝑋<sup>𝑇</sup>𝑋)<sup>−1</sup>𝑋<sup>𝑇</sup>𝑦
+# We have to create this equation using numpy methods and operations: (𝑋 <sup>𝑇</sup>𝑋) <sup>−1</sup>𝑋 <sup>𝑇</sup>𝑦
 X_scratch = X_train.copy() # Making a copy of the training set so that the original training set doesn't alter
 '''
 The normal equation is created such that each coefficient in the model has an input of some kind to be multiplied against. A column of ones is therefore ,added to calculate the intercept term.
@@ -48,16 +48,16 @@ X_scratch = np.concatenate((ones,X_scratch),1)
 
 # Calculating equation step-by-step
 
-# 𝑋<sup>𝑇</sup>𝑋
+# 𝑋 <sup>𝑇</sup>𝑋
 coefs = X_scratch.transpose().dot(X_scratch)
 
-# (𝑋<sup>𝑇</sup>𝑋)<sup>−1
+# (𝑋 <sup>𝑇</sup>𝑋) <sup>−1</sup>
 coefs = np.linalg.inv(X_scratch.transpose().dot(X_scratch))
 
-# (𝑋<sup>𝑇</sup>𝑋)<sup>−1</sup>𝑋<sup>𝑇</sup>
+# (𝑋 <sup>𝑇</sup>𝑋) <sup>−1</sup>𝑋 <sup>𝑇</sup>
 coefs = np.linalg.inv(X_scratch.transpose().dot(X_scratch)).dot(X_scratch.transpose())
 
-# (𝑋<sup>𝑇</sup>𝑋)<sup>−1</sup>𝑋<sup>𝑇</sup>𝑦
+# (𝑋 <sup>𝑇</sup>𝑋) <sup>−1</sup>𝑋 <sup>𝑇</sup>𝑦
 coefs = np.linalg.inv(X_scratch.transpose().dot(X_scratch)).dot(X_scratch.transpose()).dot(y_train)
 
 # Getting intercept and coefficients
