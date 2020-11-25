@@ -1,6 +1,6 @@
 {
-  "title": "Regularization in Regression Using Python",
-  "description": "In this scenario, you will learn how to use regularization in linear regression models effectively",
+  "title": "Linear Regression from Scratch Using NumPy",
+  "description": "In this scenario, you will learn how to create linear regression algorithms from scratch using NumPy, a library for numeric computing in Python",
   "difficulty": "Beginner",
   "time": "15 minutes",
   "details": {

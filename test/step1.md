@@ -1,20 +1,24 @@
-### What Is Regularization?
-Regularization is a kind of regression that shrinks the coefficient estimates towards zero. This technique discourages formation of a complex model, so as to avoid risk of overfitting.
+### What is linear regression?
+Linear regression attempts to find a relationship between a dependent variable and one or more explanatory (or independent) variables. In case of simple linear regression where there is only one explanatory variable, linear regression is described as a general equation as shown below:
 
-#### Underfitting and Overfitting
-* Underfitting occurs when a model is not able to capture the underlying trend of the data.
-* Overfitting occurs when a model follows the trend of training data very closely but is not able to replicate the same performance on testing data.
+![n1](./assets/n1.jpg)
 
-A good fit model generalizes well and neither underfits nor overfits.
+where y is the dependent variable, x is the explanatory variable with coefficient b1, and b0 is the intercept with the error term 𝜖.
+
+For multiple linear regression, we have two or more explanatory variables. It is described as a general equation as shown below:
+
+![n2](./assets/n2.jpg)
+
+where y is the dependent variable, x<sub>1</sub>...x<sub>p</sub> are the explanatory variables with regression coefficients b<sub>1</sub>...b<sub>p</sub>, and b<sub>0</sub> is the intercept with the error term 𝜖.
 
 ### About the dataset
 This is a simulated dataset made for teaching regression containing 10 independent variables named `Feat01`, `Feat02`..., `Feat10` and a dependent variable called `Target`. The dataset is stored in a CSV file called `data.csv`.
 
 ### The task
-The task at hand is to predict the **Target** variable such that the values of predictions are as close to the actual values as possible. This will be done using a multiple linear regression model with polynomial features.
+The task at hand is to predict the `Target` variable such that the values of predictions are as close to the actual values as possible. This will be done using a baseline linear regression model made from scratch using NumPy.
 
 ### A basic multiple linear regression model
-As learnt in the previous scenarios, first we will train a multiple linear regression model using all available features before performing regularization. We will compare our regularization results with this model. Copy the following code to the editor: 
+As learnt in the previous scenario, first we will train a linear regression model using all available features. Copy the following code to the editor: 
 
 <pre class="file" data-filename="lr.py" data-target="replace">
 # Importing numpy and pandas
@@ -50,14 +54,6 @@ from sklearn.metrics import r2_score, mean_squared_error
 print("The R-squared score is {:.4f}".format(r2_score(y_test,y_pred)))
 print("The Root Mean Squared error is {:.4f}".format(np.sqrt(mean_squared_error(y_test,y_pred))))
 print("_____________________")
-
-# Performing cross-validation
-from sklearn.model_selection import cross_val_score
-r2_cross_val = cross_val_score(LinearRegression(),X,y,cv=3,scoring="r2")
-print("The 3-fold CV R^2 scores are {} \nwith a mean R^2 score of {:.4f}".format(r2_cross_val,np.mean(r2_cross_val)))
-rmse_cross_val = cross_val_score(LinearRegression(),X,y,cv=3,scoring="neg_root_mean_squared_error")
-print("The 3-fold CV RMSE scores are {} \nwith a mean RMSE of {:.4f}".format([-i for i in rmse_cross_val],-np.mean(rmse_cross_val)))
-print("_____________________")
 </pre>
 
 Run `lr.py` using the following command:
@@ -66,4 +62,4 @@ Run `lr.py` using the following command:
 
 The above code loads the data, prepares it, trains a model with all available features, takes predictions, and finally evaluates the model.
 
-We do have a trained model now but it might be overfitting. It's time to perform regularization. Here, we will perform L1 and L2 regularization.
+Now, we start building a linear regression model from scratch using numpy. This will teach you the inner workings of a linear regression model.
