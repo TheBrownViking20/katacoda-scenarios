@@ -48,6 +48,8 @@ Now, let's train Ridge regression models for increasing values of 𝜆 parameter
 # Ridge() for L2 regularization
 from sklearn.linear_model import Ridge
 
+from sklearn.metrics import r2_score, mean_squared_error
+
 alpha_values = [0.0001,0.001,0.01,0.1,1] # Different values for 𝜆 parameter
 for i in alpha_values:
     # Fitting a ridge regression model

@@ -48,6 +48,8 @@ Now, let's train Lasso regression models for increasing values of 𝜆 parameter
 # Lasso() for L1 regularization
 from sklearn.linear_model import Lasso
 
+from sklearn.metrics import r2_score, mean_squared_error
+
 alpha_values = [0.0001,0.001,0.01,0.1,1] # Different values for 𝜆 parameter
 for i in alpha_values:
     # Fitting a lasso regression model

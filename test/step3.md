@@ -4,6 +4,7 @@ Let's print out the table of coefficients. Append the following code to the edit
 <pre class="file" data-filename="lr.py" data-target="append">
 ridge_alpha_comparison = model_coefs.set_index("Feature/Column").apply(lambda x: np.abs(x),axis=1)
 print(ridge_alpha_comparison)
+print("_____________________")
 </pre>
 
 Run `lr.py` using the following command:
