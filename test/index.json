@@ -33,23 +33,7 @@
       "client": [
         { 
           "file": "data.csv",  
-          "target": "~/data/"  
-        },
-        { 
-          "file": "n1.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "n2.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "s1.jpg",  
-          "target": "~/images/"  
-        },
-        { 
-          "file": "s2.jpg",  
-          "target": "~/images/"  
+          "target": "~/"  
         }
       ]
     }
