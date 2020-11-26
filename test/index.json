@@ -30,12 +30,7 @@
       "text": "finish.md"
     },
     "assets": {
-      "client": [
-        { 
-          "file": "data.csv",  
-          "target": "~/"  
-        }
-      ]
+      "client": []
     }
   },
   "environment": {
