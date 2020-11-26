@@ -58,6 +58,6 @@
     "uilayout": "vscode-terminal-split"
   },
   "backend": {
-    "imageid": "ubuntu:1804"
+    "imageid": "ubuntu"
   }
 }
