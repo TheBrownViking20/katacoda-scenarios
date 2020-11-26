@@ -22,8 +22,16 @@ Run `lr.py` using the following command:
 The normal equation appproach built from scratch gives almost identical results to the Scikit-learn model. We can calculate RMSE between the scikit-learn model and normal equation model to check difference in their predictions. Append the following code to the editor:
 
 <pre class="file" data-filename="lr.py" data-target="append">
+# Fitting the linear model for comparison
+from sklearn.linear_model import LinearRegression
+model = LinearRegression()
+# Training our model
+model.fit(X_train,y_train)
+# Taking predictions for the test set
+y_pred = model.predict(X_test)
+
 # Comparing both models using RMSE
-print("The Root Mean Squared error is {:.4f}".format(np.sqrt(mean_squared_error(multiple_lr_preds,multiple_lr_scratch_preds))))
+print("The Root Mean Squared error is {:.4f}".format(np.sqrt(mean_squared_error(y_pred,scratch_pred))))
 print("_____________________")
 </pre>
 
