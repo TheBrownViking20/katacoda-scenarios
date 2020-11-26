@@ -30,7 +30,24 @@
       "text": "finish.md"
     },
     "assets": {
-      "client": []
+      "client": [
+        { 
+          "file": "n1.jpg",  
+          "target": "~/"  
+        },
+        { 
+          "file": "n2.jpg",  
+          "target": "~/"  
+        },
+        { 
+          "file": "s1.jpg",  
+          "target": "~/"  
+        },
+        { 
+          "file": "s2.jpg",  
+          "target": "~/"  
+        }
+      ]
     }
   },
   "environment": {
