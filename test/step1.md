@@ -25,7 +25,7 @@ As learnt in the previous scenario, first we will train a linear regression mode
 import numpy as np
 import pandas as pd
 # Reading the csv file using pandas 
-data = pd.read_csv("data/data.csv")
+data = pd.read_csv("data.csv")
 
 # Extracting dependent and independent variables
 X = data.drop(["Target"],axis=1)

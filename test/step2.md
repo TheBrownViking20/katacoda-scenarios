@@ -22,7 +22,7 @@ Using `X_train` as the feature matrix and `y_train` as the target variable vecto
 import numpy as np
 import pandas as pd
 # Reading the csv file using pandas 
-data = pd.read_csv("data/data.csv")
+data = pd.read_csv("data.csv")
 
 # Extracting dependent and independent variables
 X = data.drop(["Target"],axis=1)
