@@ -32,19 +32,7 @@
     "assets": {
       "client": [
         { 
-          "file": "n1.jpg",  
-          "target": "~/"  
-        },
-        { 
-          "file": "n2.jpg",  
-          "target": "~/"  
-        },
-        { 
-          "file": "s1.jpg",  
-          "target": "~/"  
-        },
-        { 
-          "file": "s2.jpg",  
+          "file": "img1.jpg",  
           "target": "~/"  
         }
       ]

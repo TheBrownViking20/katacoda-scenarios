@@ -1,15 +1,13 @@
-# <p align="center">Linear Regression with Python</p>
+# <p align="center">Applications of Linear Algebra using Python</p>
 
-## Linear Regression from Scratch Using Numpy
+## Linear Algebra in image processing using Python
+In this scenario, you will learn how to implement various image processing techniques using matrix operations and transformations using Python. We will explore the core concepts and processes behind basic image transformations. We will use the following python libraries:
+* `Numpy` and `Scipy` for numeric and scientific computation
+* `Matplotlib` for plotting images
+* `Pillow` or PIL for loading and manipulating images
 
-In this scenario, you will learn how to create linear regression algorithms from scratch using numpy, a library for numeric computing in Python. Building linear regression algorithms using just mathematical formulas and linear algebra provides in-depth knowledge about the algorithm's inner working and helps in building intuition in future use cases. We will be using other Python libraries for this tutorial. We will use pandas for data loading and data manipulation, matplotlib and seaborn for data visualization, and scikit-learn for data preprocessing and modeling.
-
-### What is Linear Regression?
-Linear Regression attempts to find a relationship between a dependent variable and one or more explanatory (or independent) variables. Linear regression can be used for various tasks.For example, a given dataset has data about locations of houses in a state/province, their prices, their architecture, their neighborhood, etc. This dataset can be used to estimate the prices for houses (which may not have been listed yet) in that particular state. This is useful for house owners, potential buyers, and real estate agencies.
-
-Other uses of regression are:
-* Stock price prediction
-* Weather forecasting
-* Predictive analysis from survey data
-* Market research studies
-* Future sales prediction and much more
+### Pre-requisite knowledge
+Following are some scenarios that will help you in better understanding the concepts used in this scenario:
+* [Introduction to Vector Algebra Using Python](https://katacoda.com/orm-siddharth-yadav/scenarios/introduction-to-vector-algebra-using-python)
+* [Introduction to Matrix Algebra using Python](https://katacoda.com/orm-siddharth-yadav/scenarios/introduction-to-matrix-algebra-using-python)
+* [Exploring Vector Spaces using Python](https://katacoda.com/orm-siddharth-yadav/scenarios/exploring-vector-spaces-using-python)
