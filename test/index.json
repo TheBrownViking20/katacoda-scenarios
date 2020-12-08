@@ -33,7 +33,7 @@
       "client": [
         { 
           "file": "img1.jpg",  
-          "target": "~/"  
+          "target": "~/images"  
         }
       ]
     }

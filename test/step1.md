@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 from PIL import Image
 
 # Loading image
-img = Image.open("img1.jpg") 
+img = Image.open("./images/img1.jpg") 
 img.load()
 img_data = np.asarray(img, dtype="int32")
 
