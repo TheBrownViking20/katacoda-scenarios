@@ -20,14 +20,14 @@ img_data = np.asarray(img, dtype="int32")
 
 # Visualizing data
 plt.imshow(img_data)
-plt.savefig("image.jpg") # Saving image as a file
+plt.savefig("image1.jpg") # Saving image as a file
 </pre>
 
 Run `la.py` using the following command:
 
 `python3 la.py`{{execute}} (This code doesn't produce any output in the terminal.)
 
-Open the newly formed `image.jpg`{{open}} to view the newly formed image. You can see the matplotlib based visual of the image. The axes are visible and a white background also appears.
+Click and open the newly formed `image1.jpg`{{open}} in the VScode sidebar to view the newly formed image. You can see the matplotlib based visual of the image. The axes are visible and a white background also appears.
 
 ## Image as a matrix
 The `img_data` variable used in the above data stores the image as a martix. Grayscale images are represented by a two-dimensional m x n matrix where m and n are the height and width of the image respectively. Each element in the image represents the intensity of the corresponding pixels in the image. This magnitude of intensity ranges from 0 (black color) to 255(white color). Color images are represented by 3 m x n matrices (a three-dimensional matrix). These matrices represent the Red, Green and Blue (RGB color system) colors in the image with their intensities ranging from 0 (minimum) to 255 (maximum). Let's see the shape of the above image. Copy the following code to the editor:

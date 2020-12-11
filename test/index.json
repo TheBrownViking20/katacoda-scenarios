@@ -1,8 +1,8 @@
 {
-  "title": "Linear Regression from Scratch Using NumPy",
-  "description": "In this scenario, you will learn how to create linear regression algorithms from scratch using NumPy, a library for numeric computing in Python",
+  "title": "Linear Algebra in image processing using Python",
+  "description": "In this scenario, you will learn how to implement various image processing techniques using matrix operations and transformations using Python",
   "difficulty": "Beginner",
-  "time": "15 minutes",
+  "time": "20 minutes",
   "details": {
     "steps": [
       {
@@ -20,6 +20,18 @@
       {
         "title": "Step 4",
         "text": "step4.md"
+      },
+      {
+        "title": "Step 5",
+        "text": "step5.md"
+      },
+      {
+        "title": "Step 6",
+        "text": "step6.md"
+      },
+      {
+        "title": "Step 7",
+        "text": "step7.md"
       }
     ],
     "intro": {
@@ -37,6 +49,34 @@
         },
         { 
           "file": "img2.jpg",  
+          "target": "~/images"  
+        },
+        { 
+          "file": "img3.jpg",  
+          "target": "~/images"  
+        },
+        { 
+          "file": "img4.jpg",  
+          "target": "~/images"  
+        },
+        { 
+          "file": "img5.jpg",  
+          "target": "~/images"  
+        },
+        { 
+          "file": "img6.jpg",  
+          "target": "~/images"  
+        },
+        { 
+          "file": "img7.jpg",  
+          "target": "~/images"  
+        },
+        { 
+          "file": "img8.jpg",  
+          "target": "~/images"  
+        },
+        { 
+          "file": "img9.jpg",  
           "target": "~/images"  
         }
       ]
