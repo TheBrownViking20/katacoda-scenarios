@@ -46,38 +46,6 @@
         { 
           "file": "img1.jpg",  
           "target": "~/images"  
-        },
-        { 
-          "file": "img2.jpg",  
-          "target": "~/images"  
-        },
-        { 
-          "file": "img3.jpg",  
-          "target": "~/images"  
-        },
-        { 
-          "file": "img4.jpg",  
-          "target": "~/images"  
-        },
-        { 
-          "file": "img5.jpg",  
-          "target": "~/images"  
-        },
-        { 
-          "file": "img6.jpg",  
-          "target": "~/images"  
-        },
-        { 
-          "file": "img7.jpg",  
-          "target": "~/images"  
-        },
-        { 
-          "file": "img8.jpg",  
-          "target": "~/images"  
-        },
-        { 
-          "file": "img9.jpg",  
-          "target": "~/images"  
         }
       ]
     }
