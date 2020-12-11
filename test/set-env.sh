@@ -1,2 +1,2 @@
-pip3 install scikit-learn pandas matplotlib scipy Pillow
+pip3 install numpy matplotlib scipy Pillow
 clear
