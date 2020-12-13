@@ -1,2 +1,2 @@
-pip3 install numpy matplotlib scipy Pillow
+pip3 install numpy pandas matplotlib scipy seaborn scikit-learn
 clear

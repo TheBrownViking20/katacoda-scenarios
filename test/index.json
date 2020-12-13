@@ -1,6 +1,6 @@
 {
-  "title": "Linear Algebra in image processing using Python",
-  "description": "In this scenario, you will learn how to implement various image processing techniques using matrix operations and transformations using Python.",
+  "title": "Spectral clustering from scratch using Python",
+  "description": "In this scenario, you will learn how to implement spectral clustering from scratch using python",
   "difficulty": "Beginner",
   "time": "20 minutes",
   "details": {
@@ -42,12 +42,7 @@
       "text": "finish.md"
     },
     "assets": {
-      "client": [
-        { 
-          "file": "img1.jpg",  
-          "target": "~/images"  
-        }
-      ]
+      "client": []
     }
   },
   "environment": {

@@ -1,91 +1,65 @@
-## Convolution based transformations
-In image processing, convolution operation is applied between a kernel and the image. The kernel matrix is very small compared to the image matrix and when convolved with the image matrix can be used for tasks like edge detection, blurring, sharpening, etc. Convolution operation involves adding each element of the image matrix to its neighbors. 
-
-According to [Wikipedia](https://en.wikipedia.org/wiki/Convolution), in mathematics, convolution is a mathematical operation on two functions (kernel and image in our case) that produces a third function that expresses how the shape of one is modified by the other. The term convolution refers to both the result function and to the process of computing it. It is defined as the integral of the product of the two functions after one is reversed and shifted. And the integral is evaluated for all values of shift, producing the convolution function.
-
-We will use the `convolve()` method provided by `scipy` to perform calculations. Let's try some convolution based transformations.
-
-### Identity kernel
-We can get the exactly same image as the input image by using the following kernel:
-
-![img5](./assets/img5.jpg)
-
-Let's verify it using code. We will convert our image to its grayscale counterpart to apply this kernel for simplicity. Copy the following code to the editor:
+## Evaluating different approaches
+We will use silhouette score to compare the performance of the different approches used in this tutorial. Silhouette score compares how similar a data point is to its cluster compared to other clusters. Copy the following code to the editor:
 
 <pre class="file" data-filename="la.py" data-target="replace">
-# Importing libraries
+from sklearn.datasets import make_moons 
+from sklearn.neighbors import radius_neighbors_graph
+from sklearn.metrics import silhouette_score
+from sklearn.cluster import KMeans, SpectralClustering
 import numpy as np
 import matplotlib.pyplot as plt
-from PIL import Image, ImageOps
-from scipy.ndimage import convolve
 
-# Loading image
-img = Image.open("./images/img1.jpg")
-# Converting to grayscale
-img = ImageOps.grayscale(img) 
-img.load()
+X, y = make_moons(200, noise=.06, random_state=100)
 
-# Image as a matrix
-img_data = np.asarray(img, dtype="int32")
+# Creating the adjacency matrix
+# Connections are made to neighbors within the radius of 0.3 units
+A = radius_neighbors_graph(X, 0.3, mode='connectivity', metric='minkowski', p=2, include_self=False)
 
-# Kernel for identity
-k = np.array([[0, 0, 0],
-              [0, 1, 0],
-              [0, 0, 0]])
+# Creating degree matrix
+# By calculating degrees using row sum
+D = np.diag(A.todense().sum(axis=1).ravel().tolist()[0])
 
-# Performing convolution
-convolved = convolve(img_data, k, mode='constant', cval=1.0) 
+# Calculating Graph Laplacian
+L = D - A
 
-# Plotting image 
-plt.imshow(convolved, cmap='gray', vmin=0, vmax=255)
-plt.savefig("image8.jpg") # Saving image as a file
+# Calculating eigenvalues and eigenvectors
+eigenvalues, eigenvectors = np.linalg.eig(L)
+
+# Getting threshold
+# Second smallest eigenvalue is chosen
+threshold = np.where(eigenvalues == np.partition(eigenvalues,1)[1])
+
+cluster = eigenvectors[:,1].copy()
+cluster[cluster <= 0] = 0
+cluster[cluster > 0] = 1
+
+# Applying Spectral Clustering on data (X)
+sc = SpectralClustering(n_clusters=2, affinity='nearest_neighbors', assign_labels='kmeans').fit(X)
+
+# Getting clusters
+sc_clusters = sc.labels_
+
+# Applying KMeans Clustering on data (X)
+km = KMeans(n_clusters=2).fit(X)
+
+# Getting clusters
+km_clusters = km.labels_
+
+# Calculating silhouette scores
+silhouettes = []
+silhouettes.append(silhouette_score(X,y))
+silhouettes.append(silhouette_score(X,cluster))
+silhouettes.append(silhouette_score(X,sc_clusters))
+silhouettes.append(silhouette_score(X,km_clusters))
+
+# Plotting results
+plt.barh(["Original","Spectral Clustering: Scratch","Spectral Clustering: Scikit-learn","KMeans Clustering"],silhouettes)
+plt.savefig("image7.jpg") # Saving plot as a file
+plt.show()
 </pre>
 
 Run `la.py` using the following command:
 
-`python3 la.py`{{execute}} (This code doesn't produce any output in the terminal.)
+`python3 la.py`{{execute}} (This code doesn't produce any new output in the terminal.)
 
-Click and open the newly formed `image8.jpg`{{open}} in the VScode sidebar to view the newly formed image. We see a grayscale version of our original image with no other change.
-
-
-### Sharpening the image
-We can sharpen the image using the convolution operation. Following is the kernel for sharpening an image:
-
-![img6](./assets/img6.jpg)
-
-We will convert our images first into its grayscale version for simplicity. Copy the following code to the editor:
-
-<pre class="file" data-filename="la.py" data-target="replace">
-# Importing libraries
-import numpy as np
-import matplotlib.pyplot as plt
-from PIL import Image, ImageOps
-from scipy.ndimage import convolve
-
-# Loading image
-img = Image.open("./images/img1.jpg")
-# Converting to grayscale
-img = ImageOps.grayscale(img) 
-img.load()
-
-# Image as a matrix
-img_data = np.asarray(img, dtype="int32")
-
-# Kernel for sharpening
-k = np.array([[0, -1, 0],
-              [-1, 5, -1],
-              [0, -1, 0]])
-
-# Performing convolution
-convolved = convolve(img_data, k, mode='constant', cval=1.0) 
-
-# Plotting image 
-plt.imshow(convolved, cmap='gray', vmin=0, vmax=255)
-plt.savefig("image9.jpg") # Saving image as a file
-</pre>
-
-Run `la.py` using the following command:
-
-`python3 la.py`{{execute}} (This code doesn't produce any output in the terminal.)
-
-Click and open the newly formed `image9.jpg`{{open}} in the VScode sidebar to view the newly formed image. We get a sharper image compared to the original grayscale image.
+Click and open the newly formed `image7.jpg`{{open}} in the VScode sidebar to view the plot. According to the plot, the silhouette scores of original data and both spectral clustering approaches is same. This means we have successfully implemented the spectral clustering algorithm. However, KMeans clustering has the highest score. It means that KMeans clustering is the more suited algorithm for clustering on this data.
