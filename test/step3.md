@@ -36,7 +36,7 @@ eigenvalues, eigenvectors = np.linalg.eig(L)
 # Getting threshold
 # Second smallest eigenvalue is chosen
 threshold = np.where(eigenvalues == np.partition(eigenvalues,1)[1])
-print("Threshold:",threshold[0])
+print("Threshold:",threshold[0][0])
 </pre>
 
 Run `la.py` using the following command:
@@ -45,18 +45,18 @@ Run `la.py` using the following command:
 
 The first non-zero eigenvalue is the spectral gap which describes the density of the graph. The first eigenvalue is zero or very close. So, the second lowest eigenvalue is chosen as threshold. This is the minimum cut for the graph to get the required clusters with a connected graph.
 
-# Assigning clusters
+## Assigning clusters
 Using the eigenvector corresponding to the threshold eigenvalue, we will assign the clusters. As the given eigenvector has 200 elements, if the element of eigenvector corresponding to our initial data point is less than or equal to zero, it is assigned cluster 0, else it is assigned cluster 1. Append the following code to the editor:
 
 <pre class="file" data-filename="la.py" data-target="append">
 # Assigning clusters
 # Using eigenvector corresponding to the threshold eigenvalue
-cluster = eigenvectors[:,1].copy()
+cluster = eigenvectors[:,threshold[0][0]].copy()
 cluster[cluster <= 0] = 0
 cluster[cluster > 0] = 1
 
 # Visualizing the clusters
-plt.scatter(X[:, 0], X[:, 1],c=cluster,s=20)
+plt.scatter(X[:, 0], X[:, 1],c=cluster.flatten().tolist()[0],s=20)
 plt.title("Spectral Clustering from scratch")
 plt.savefig("image4.jpg") # Saving plot as a file
 plt.show()
@@ -66,4 +66,4 @@ Run `la.py` using the following command:
 
 `python3 la.py`{{execute}} (This code doesn't produce any new output in the terminal.)
 
-Click and open the newly formed `image4.jpg`{{open}} in the VScode sidebar to view the plot. The plot is almost identical to that of the original data. Only colors are swapped.
+Click and open the newly formed `image4.jpg`{{open}} in the VScode sidebar to view the plot. The plot is almost identical to that of the original data.

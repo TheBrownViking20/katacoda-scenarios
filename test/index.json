@@ -1,7 +1,7 @@
 {
-  "title": "Spectral clustering from scratch using Python",
-  "description": "In this scenario, you will learn how to implement spectral clustering from scratch using python",
-  "difficulty": "Beginner",
+  "title": "Understanding word embeddings using Python",
+  "description": "In this scenario, you will learn about the concepts and methods of the widely used word embeddings using python",
+  "difficulty": "Intermediate",
   "time": "20 minutes",
   "details": {
     "steps": [

@@ -8,6 +8,7 @@ from sklearn.metrics import silhouette_score
 from sklearn.cluster import KMeans, SpectralClustering
 import numpy as np
 import matplotlib.pyplot as plt
+plt.gcf().subplots_adjust(left=0.15)
 
 X, y = make_moons(200, noise=.06, random_state=100)
 
@@ -47,7 +48,7 @@ km_clusters = km.labels_
 
 # Calculating silhouette scores
 silhouettes = []
-silhouettes.append(silhouette_score(X,y))
+silhouettes.append(silhouette_score(X,y.ravel))
 silhouettes.append(silhouette_score(X,cluster))
 silhouettes.append(silhouette_score(X,sc_clusters))
 silhouettes.append(silhouette_score(X,km_clusters))

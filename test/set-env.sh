@@ -1,2 +1,2 @@
-pip3 install numpy pandas matplotlib scipy seaborn scikit-learn
+pip3 install numpy pandas scikit-learn nltk gensim
 clear

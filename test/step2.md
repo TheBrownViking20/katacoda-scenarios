@@ -1,77 +1,95 @@
-## Adjacency Matrix
-Now, we create adjacency matrix. Adjacency matrix is a N x N matrix where N is the number of points. The rows and columns represent the data points. The value corresponding to the mth row number and nth column number is 1 if there exists a connection or relation betweem data point m and data point n. Else, the value is zero. Since, our data points are independent, we will create connections between them using their radius from their nearest neighbors. Copy the following code to the editor:
+## TfidfVectorizer
+`CountVectorizer` is a simple method for encoding text but it has some shortcomings. Articles and propositions like "the", "and", "is", "on", etc. can frequently occur in documents and as these words don't provide much context about the documents, it is not ideal for them to be the high frequency elements in the vectors. `TfidfVectorizer` can solve this. TFIDF or term frequency–inverse document frequency is a statistic that expresses how important a word is to a document in a collection of documents. Term Frequency associates words with their frequencies in the document while inverse document frequency highlights the words which are frequent in very few specific documents as opposed to words like "the" and "and", which are likely to appear in most documents. For example, in a given set of documents, words like "cinnamon" and "cilantro" can be considered important as they only appear in documents containing food recipes or words like "capacitive" and "megapixel" can be considered important as they only appear in articles about smartphones.
+
+Let's see an example of `TfidfVectorizer`. Copy the following code to the editor:
 
 <pre class="file" data-filename="la.py" data-target="replace">
-# Importing libraries
-# make_moons method creates moon shaped classes of data
-from sklearn.datasets import make_moons
-import matplotlib.pyplot as plt
+# Importing TfidfVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
 
-# Generating 200 data points
-X, y = make_moons(200, noise=.06, random_state=100)
+# Using two documents
+text = [
+    "Two roads diverged in a wood and I took the one less traveled by, and that has made all the difference.",
+    "The best way out is always through."
+]
 
-# Creating the adjacency matrix
-# Connections are made to neighbors within the radius of 0.3 units
-from sklearn.neighbors import radius_neighbors_graph
-A = radius_neighbors_graph(X, 0.3, mode='connectivity', metric='minkowski', p=2, include_self=False)
+# A TfidfVectorizer object
+vectorizer = TfidfVectorizer()
 
-print("Shape of adjacency matrix:",A)
+# This method tokenizes text and generates vocabulary
+vectorizer.fit(text)
 
-# Visualizing adjacency matrix
-import seaborn as sns
-sns.heatmap(A.todense())
-plt.savefig("image2.jpg")
-plt.show()
-</pre>
+print("Generated Vocabulary:")
+print(vectorizer.vocabulary_)
 
-Run `la.py` using the following command:
+print("\nNumber of words in the document:")
+print(len(text[0].split()) + len(text[1].split()))
 
-`python3 la.py`{{execute}} (This code doesn't produce any new output in the terminal.)
+print("\nNumber of words in the vocabulary:")
+print(len(vectorizer.vocabulary_))
 
-Click and open the newly formed `image2.jpg`{{open}} in the VScode sidebar to view the heatmap. All the white spaces in the heatmap of the adjacency matrix represent the connections based on radius.
+print("\nInverse document frequency:")
+print(vectorizer.idf_)
 
-## Degree Matrix
-The degree of a node(data point) is the number of edges connected to it. The degree of all the nodes are calculated by taking the sum of each row or each column. Thus, the degree of a node is its corresponding row sum or column. We will use this list of degrees to create a N x N diagonal matrix where the diagonal element to the corresponding node is its degree. Copy the following code to the editor:
+# Transforming document into a vector based on vocabulary
+vector = vectorizer.transform(text)
 
-<pre class="file" data-filename="la.py" data-target="replace">
-from sklearn.datasets import make_moons
-import numpy as np
-import matplotlib.pyplot as plt
+print("\nShape of the transformed vectors:")
+print(vector.shape)
 
-X, y = make_moons(200, noise=.06, random_state=100)
-
-# Creating the adjacency matrix
-# Connections are made to neighbors within the radius of 0.3 units
-from sklearn.neighbors import radius_neighbors_graph
-A = radius_neighbors_graph(X, 0.3, mode='connectivity', metric='minkowski', p=2, include_self=False)
-
-# Creating degree matrix
-# By calculating degrees using row sum
-D = np.diag(A.todense().sum(axis=1).ravel().tolist()[0])
-
-print("Shape of degree matrix:",D)
+print("\nVector representation of the documents:")
+print(vector.toarray())
 </pre>
 
 Run `la.py` using the following command:
 
 `python3 la.py`{{execute}}
 
-## Graph Laplacian matrix
-Graph Laplacian is obtained by subtracting adjacency matrix from degree matrix. Append the following code to the editor:
+In the output of the above code, "the" is the 17th element of the inverse document frequency vector and has the lowest IDF value. This is due to the fact that it appears in both documents. All other words in the vocabulary only occur in one document. The elements in vector representations have been normalized between 0 and 1.
 
-<pre class="file" data-filename="la.py" data-target="append">
-# Calculating Graph Laplacian
-L = D - A
+Let's see an example with more documents. Copy the following code to the editor:
 
-# Visualizing adjacency matrix
-import seaborn as sns
-sns.heatmap(L)
-plt.savefig("image3.jpg")
-plt.show()
+<pre class="file" data-filename="la.py" data-target="replace">
+# Importing TfidfVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+# Using two documents
+text = [
+    "Two roads diverged in a wood and I took the one less traveled by, and that has made all the difference.",
+    "The best way out is always through.",
+    "The best things and best people rise out of their separateness."
+]
+
+# A TfidfVectorizer object
+vectorizer = TfidfVectorizer()
+
+# This method tokenizes text and generates vocabulary
+vectorizer.fit(text)
+
+print("Generated Vocabulary:")
+print(vectorizer.vocabulary_)
+
+print("\nNumber of words in the document:")
+print(sum([len(i.split()) for i in text]))
+
+print("\nNumber of words in the vocabulary:")
+print(len(vectorizer.vocabulary_))
+
+print("\nInverse document frequency:")
+print(vectorizer.idf_)
+
+# Transforming document into a vector based on vocabulary
+vector = vectorizer.transform(text)
+
+print("\nShape of the transformed vectors:")
+print(vector.shape)
+
+print("\nVector representation of the documents:")
+print(vector.toarray())
 </pre>
 
 Run `la.py` using the following command:
 
-`python3 la.py`{{execute}} (This code doesn't produce any new output in the terminal.)
+`python3 la.py`{{execute}}
 
-Click and open the newly formed `image3.jpg`{{open}} in the VScode sidebar to view the heatmap.
+The word, "the" still has the lowest inverse document frequency and now words like "and", "best" and "out" also have lower frequencies. All other words are important and unique to their respective documents.

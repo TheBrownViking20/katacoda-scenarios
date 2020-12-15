@@ -1,8 +1,8 @@
 Well done! You have successfully completed the tutorial.
 
 ### Learning outcomes
-* Creating a clustering algorithm from scratch
-* Learning about application of eigenvalues and eigenvectors in clustering
+* Learn how vectors are used to create word embeddings
+* Implement word2vec for both skip-gram and continuous bag-of-words model
 
 ### Useful Links
 * [Spectral Clustering: Foundation and application](https://towardsdatascience.com/spectral-clustering-aba2640c0d5b)
